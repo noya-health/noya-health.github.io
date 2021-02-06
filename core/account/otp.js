@@ -3,6 +3,8 @@
 $('input').keyup(function() {
     if ($(this).val().length == $(this).attr("maxlength")) {
         $(this).closest('.form-input-field-group-1').next().find('input').focus();
+    } else if ($(this).val().length == 0) {
+        $(this).closest('.form-input-field-group-1').prev().find('input').focus();
     }
 });
 
