@@ -106,68 +106,19 @@ function showScrolledTitle(modalSection) {
     }
 }
 
-/*----------- Checkboxes -----------*/
-// Update button text based on checked checkbox count
-var fnUpdateCount = function() {
-    var generallen = $("input:checkbox:checked").length;
-    console.log(generallen, $("#cb-btn"))
-    if (generallen > 0) {
-        $("#cb-btn").text('Next · ' + generallen + ' selected');
-    } else {
-        $("#cb-btn").text('Next');
-    }
-};
+/*----------- IC Input -----------*/
+document.getElementById('input-num-ic').addEventListener('input', function (e) {
+    var target = e.target, position = target.selectionEnd, length = target.value.length;
 
-// Dynamically adding checkboxes
-$(document).ready(function() {
-    $('#btnSaveIssue').click(function(e) {
-        addCheckbox($('#newIssue').val());
-        e.preventDefault();
-        closeModal();
-        fnUpdateCount();
-        scrollSmoothToBottom()
-    });
+    target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{6})/g, '$1 ').replace(/(.{9})/g, '$1 ').trim();
+    //target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/^(.{6})(.{2})/g, "$1 $2").trim();
+
+    target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);
 });
 
-// Update count when new checkboxes added dynamically
-$(document).on('change', 'input:checkbox', function() {
-    fnUpdateCount();
-});
+$('#input-num-ic').attr('maxLength','14').keypress(limitMe);
 
-// Change checkbox visual on checked/unchecked
-$(document).on('change', 'input:checkbox', function() {
-    if ($(this).is(':checked'))
-        $(this).parent().addClass('checked');
-    else
-        $(this).parent().removeClass('checked')
-});
-
-function scrollSmoothToBottom () {
-    $(".body-content").animate({ scrollTop: $('.body-content').prop("scrollHeight")}, 1500);
-}
-
-function addCheckbox(name) {
-    var container = $('#cblist');
-    var inputs = container.find('input');
-    var id = inputs.length + 1;
-    $('#cblist').append(
-        // class (.checked) added to check checkbox
-        $(document.createElement('label')).addClass('w-checkbox form-input-checkbox-group-1 checked')
-            .append(
-                $('<div />').addClass('w-checkbox-input w-checkbox-input--inputType-custom ui-checkbox-btn w--redirected-checked'))
-            .append(
-                $('<input />', {
-                    type: 'checkbox',
-                    'checked': 'checked',
-                    id: 'cb' + id,
-                    name: "checkbox-2",
-                    style: "opacity:0;position:absolute;z-index:-1",
-                    onchange: "selectionChanged(this)"
-                }).attr('data-name', 'Checkbox 2'))
-            .append(
-                $('<span />', {
-                    text: name
-                }).addClass('text2 w-form-label')
-                    .append($(document.createElement('br'))))
-    );
+function limitMe(e) {
+    if (e.keyCode == 8) { return true; }
+    return this.value.length < $(this).attr("maxLength");
 }
