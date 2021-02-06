@@ -1,0 +1,98 @@
+/* ----------- Mobile browsers ----------- */
+/* Prevent address bar resizing */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.body-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+/* ----------- Slider ----------- */
+ #slider-snap.noUi-state-tap .noUi-connect,
+ #slider-snap.noUi-state-tap .noUi-origin {
+     -webkit-transition: transform 300ms ease-out;
+     transition: transform 300ms ease-out;
+ }
+
+.noUi-value{
+    cursor: pointer;
+}
+
+.noUi-tooltip {
+    border-radius: 4px;
+    border: none;
+    color: #313235;
+    box-shadow: 0 2px 16px rgba(68, 68, 68, 0.11);
+    padding: 8px;
+
+}
+
+.noUi-connect {
+    background-color: #d2eef5;
+    border-radius: 34px;
+}
+
+.noUi-connects {
+    border-radius: 34px;
+}
+
+.noUi-target {
+    border-radius: 34px;
+    border: none;
+    background-color: #f6f6f7;
+    box-shadow: none;
+}
+
+.noUi-marker-horizontal.noUi-marker-large {
+    height: 8px;
+}
+
+.noUi-marker-large {
+    background-color: #909daa;
+}
+
+.noUi-pips {
+    color: #909daa;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 34px;
+    height: 34px;
+    top: -8px;
+    cursor: pointer;
+}
+
+.noUi-handle {
+    border: none;
+    background-color: #48c7dd;
+    border-radius: 100%;
+    background-image: url('https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6001866273bc296488387867_Sort.svg');
+    background-size: 28px 28px;
+    background-position: 50% 50%;
+    box-shadow: 0 2px 16px rgba(72, 199, 221, 0.5);
+}
+
+.noUi-handle:before, .noUi-handle:after {
+    display:none;
+}
+
+.noUi-target, .noUi-target * {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.noUi-base, .noUi-connects{
+    cursor: pointer;
+}
+
+.noUi-handle.noUi-handle-lower:focus {
+    outline: none;
+}
