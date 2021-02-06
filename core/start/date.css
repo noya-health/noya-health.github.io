@@ -1,0 +1,190 @@
+/* ----------- Mobile browsers ----------- */
+/* Prevent address bar resizing */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.body-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+/* ----------- Datepicker ----------- */
+
+ .ui-datepicker {
+     width: 100%;
+     line-height: 1.5;
+     padding: 0 24px 0 24px;
+     color: #313235;
+     margin: 0;
+     min-height: 350px;
+ }
+
+.ui-datepicker table {
+    margin: 0;
+}
+
+
+.ui-datepicker th {
+    font-weight: 500;
+    color: #909daa;
+    cursor: default;
+}
+
+.ui-widget {
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.ui-state-default {
+    background-color: #fff;
+    border: none;
+    font-size: 16px;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: none;
+    color: #313235;
+    background-color: transparent;
+    transition: background-color 50ms ease-out;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: none;
+    background: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/5fed6299b640936934be361c_Dot-Brand.svg);
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position: 90% 10%;
+    transition: background-color 50ms ease-out;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: none;
+    background-color: #48c7dd;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 10px 40px -10px rgba(72, 199, 221, 0.5);
+    transition: background-color 50ms ease-out, color 50ms ease-out, background-image 50ms ease-out;
+    -webkit-transition: background-image 50ms ease-out;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    margin: auto;
+    border-radius: 100%;
+}
+
+.ui-state-default:hover{
+    background-color: rgba(72, 199, 221, 0.25);
+    color: #48c7dd;
+}
+
+.ui-state-default.ui-state-active:hover {
+    background-color: #41a0b1;
+    background-image: none;
+    color: #fff;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    color: #afb0b1;
+    opacity: 0.1;
+}
+
+.ui-widget-header {
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    padding: 0;
+    margin: 0 0 8px 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 40px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    line-height: 1.5;
+    margin: auto;
+    cursor: default;
+}
+
+.ui-widget.ui-widget-content, .ui-widget-content {
+    border: none;
+}
+
+.ui-icon.ui-icon-circle-triangle-w {
+    background: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/5fd61cbe34b9d0c9c90175ec_caret-left.svg);
+}
+
+.ui-icon.ui-icon-circle-triangle-e {
+    background: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/5ff6f8bda273560fa2778c4d_Caret-right-black.svg);
+}
+
+.ui-icon.ui-icon-circle-triangle-w, .ui-icon.ui-icon-circle-triangle-e {
+    width: 20px;
+    height: 20px;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    width: 32px;
+    height: 32px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: #f1f3f5;
+    transition: background-color 400ms ease-out;
+}
+
+a.ui-datepicker-prev.ui-corner-all:hover, a.ui-datepicker-next.ui-corner-all:hover {
+    background-color: #e2e6ea ;
+    border: none;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+    left: -12px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+    right: -12px;
+}
+
+.ui-datepicker .ui-icon {
+    left: 0;
+    top: 0;
+}
+
+.ui-icon {
+    margin: 0;
+}
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    position: static;
+    left: 0;
+    margin: 0;
+    top: 0;
+}
