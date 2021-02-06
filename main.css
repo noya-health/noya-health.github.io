@@ -59,38 +59,20 @@ label {
     font-feature-settings: "ss01" on;
 }
 
-/* Icon behaviours */
-img[class*='ui-row-icon'], img[class*='ui-helper-icon'] {
-    pointer-events: none;
-}
-
-@media screen and (max-width: 991px) {
-    /* Fix click/hover on mobile */
-    .btn-ghost-2:hover {
-        background-color: rgba(72, 199, 221, 0.1) !important;
-    }
-
-    .btn-ghost-2:active {
-        background-color: rgba(72, 199, 221, 0.3) !important;
-    }
-}
-
-/* ----------- Forms ----------- */
-/* Underline animation :: input */
-.form-input-field-group-1 > .form-input-field-1:focus + .underline, .form-input-field-passcode:focus + .underline {
-    width: 100%;
-}
-
+     /* ----------- General ----------- */
+     /* Underline animation :: input */
+ .form-input-field-group-1 > .form-input-field-1:focus + .underline, .form-input-field-passcode:focus + .underline{
+     width: 100%;
+ }
 /* Underline animation :: select/dropdown */
 .form-input-field-select-group-1 > .nice-select.open + .select-underline-wrapper > .underline-container {
     width: 100%;
 }
-
 .select-underline-wrapper {
     pointer-events: none;
 }
 
-.form-input-field-1 {
+.form-input-field-1{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -105,11 +87,24 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'] {
         -webkit-backdrop-filter: none;
         backdrop-filter: none;
     }
+
+    /* Fix click/hover on mobile */
+    .btn-ghost-2:hover {
+        background-color: rgba(72, 199, 221, 0.1) !important;
+    }
+
+    .btn-ghost-2:active {
+        background-color: rgba(72, 199, 221, 0.3) !important;
+    }
 }
 
 .btn-disabled-1 {
     pointer-events: none;
     color: #afb0b1;
+}
+
+img[class*='ui-row-icon'], img[class*='ui-helper-icon'] {
+    pointer-events: none;
 }
 
 /* ----------- Radio ----------- */
@@ -128,6 +123,7 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'] {
     background-color: rgba(72, 199, 221, 0.25);
 }
 
+
 .gridbox-text-container-addon-pricing-1.active {
     color: #313235;
 }
@@ -138,7 +134,7 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'] {
 
 /* ----------- Dropdown ----------- */
 :root {
-    /* Colors */
+    /* ----------- Colors ----------- */
     --list-bg-color: #fff;
     --list-text-color: inherit; /* Use "inherit" to take on parent text color */
     --select-field-arrow-color: #afb0b1;
@@ -146,7 +142,7 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'] {
     --border-color-hover: transparent; /* Select Field could be the same as your form field border color */
     --list-item-bg-color: #f6f6f7; /* Select Field Hover/Focus State */
 
-    /* Spacing */
+    /* ----------- Spacing ----------- */
     --select-field-padding-left: 16px; /* Match the padding values for your form fields */
     --select-field-padding-right: 16px; /* Match the padding values for your form fields */
     --list-padding-top-bottom: 0px; /* This is the top and bottom padding for the dropdown list */
@@ -201,6 +197,7 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'] {
     transition: all 0.3s ease-out;
     width: 20px;
 }
+
 
 .nice-select.open:after {
     -webkit-transform: rotateZ(180deg);
@@ -429,7 +426,6 @@ span.current {
 .divider-2.inactive {
     opacity: 0;
 }
-
 @media screen and (max-width: 991px) {
     /* Fix click/hover on mobile */
     .gridbox-accordion-group-1 [class*='gridbox-row-parent']:hover {
@@ -447,7 +443,6 @@ span.current {
     .gridbox-accordion-group-1 [class*='accordion-row']:active {
         background-color: #fafbfc !important;
     }
-
     /* row behaviour when expanded */
     .gridbox-accordion-group-1.active > [class*='accordion-row']:hover {
         background-color: transparent !important;
@@ -457,4 +452,5 @@ span.current {
         background-color: #e2e6ea !important;
     }
 }
+
 
