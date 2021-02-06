@@ -1,0 +1,76 @@
+/* ----------- Mobile browsers ----------- */
+/* Prevent address bar resizing */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.body-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+/* ----------- General ----------- */
+.navbar.navbar-account, .nav-link-account-wrapper-m {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+/* Desktop :: Show nav links indicator on current page */
+.nav-link-account-wrapper-d > .nav-link-account[aria-current = "page"] > .ui-page-indicator-active {
+    display: block;
+}
+
+/* Mobile :: Change nav links background image on current page */
+.nav-link-account-wrapper-m > .nav-link-account[aria-current = "page"] > .nav-link-icon.plan {
+    background-image: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/601c76f53bea5234afc62afb_Policy.svg);
+    background-position: 50% 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+}
+
+.nav-link-account:active > .nav-link-bg-1 {
+    background-color: #e2e6ea;
+}
+
+/* ----------- Accordion :: Plan ----------- */
+.gridbox-accordion-group-1.active > .gridbox-accordion-row-2 > .icon-coverage-visit {
+    background-image: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/601aa0c06cf27424ffe2caf4_Doctor-visit--grey.png);
+    background-position: 50% 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+}
+
+.gridbox-accordion-group-1.active > .gridbox-accordion-row-2 > .icon-coverage-treatment {
+    background-image: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/601a9f4c3dc77833bbaacec5_Stethoscope--grey.svg);
+    background-position: 50% 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+}
+
+.gridbox-accordion-group-1.active > .gridbox-accordion-row-2 > .icon-coverage-stay {
+    background-image: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/601a9f4de1b53e5db3bb9764_Hospital-bed--grey.svg);
+    background-position: 50% 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+}
+
+.gridbox-accordion-group-1.active > .gridbox-accordion-row-2 > .icon-coverage-surgery {
+    background-image: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/601a9f4dba5feb37f49b638f_Scalpel--grey.svg);
+    background-position: 50% 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+}
+
+.gridbox-accordion-group-1.active > .gridbox-accordion-row-2 > .icon-coverage-emergency {
+    background-image: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/601aa0c06cf274b988e2caf3_Care--grey.png);
+    background-position: 50% 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+}
