@@ -1,0 +1,57 @@
+.w-webflow-badge {
+    position: fixed !important;
+    display: None !important;
+    visibility: hidden !important;}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+select {
+    -webkit-appearance: none;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    transition: background-color 5000s;
+}
+
+input[type=text],
+input[type=number],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btn {
+    outline:none;
+}
+
+.v-no-select, .btn, [class*='ui-action'], [class*='ui-nav'] {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+a,
+label {
+    font-feature-settings: "ss01" on;
+}
