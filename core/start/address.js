@@ -1,5 +1,4 @@
-/*----------- GPA input
- -----------*/
+/*----------- GPA input -----------*/
 
 var gpaInput = document.getElementById("gpa-input");
 var autocomplete = new google.maps.places.Autocomplete(gpaInput);
