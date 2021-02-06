@@ -28,8 +28,8 @@ html, body {
 }
 
 /* Mobile :: Change nav links background image on current page */
-.nav-link-account-wrapper-m > .nav-link-account[aria-current = "page"] > .nav-link-icon.home {
-    background-image: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/60158dd590529ca9a483c4e6_nav-home-active.svg);
+.nav-link-account-wrapper-m > .nav-link-account[aria-current = "page"] > .nav-link-icon.profile {
+    background-image: url(https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/60158dd5eabae866430dd470_nav-profile-active.svg);
     background-position: 50% 50%;
     background-size: 24px 24px;
     background-repeat: no-repeat;
