@@ -44,10 +44,6 @@ textarea {
     user-select: none;
 }
 
-.do-nothing-class {
-    pointer-events: none;
-}
-
 h1,
 h2,
 h3,
