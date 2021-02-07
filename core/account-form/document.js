@@ -18,14 +18,20 @@ $("[id^='btn-modal']").on('click', function () {
     $('.body-content').css('overflow', 'hidden');
 
     if (modalContainer.startsWith('mc-load-success')) {
-        setTimeout(function() {
-            closeModal();
-        }, 2500);
+        closeModalAuto()
     } else {
     }
 
     $(this).closest('.modal-container').removeClass("show");
 });
+
+var autoCloseFn
+
+function closeModalAuto() {
+    autoCloseFn = setTimeout(function() {
+        closeModal();
+    }, 2500);
+}
 
 // Close modal
 function closeModal() {
@@ -60,6 +66,8 @@ function closeModal() {
     setTimeout(function () {
         $('[class*=gridbox-modal-section]').scrollTop(0);
     }, 100);
+
+    clearTimeout(autoCloseFn);
 }
 
 // When user clicks the button, close the modal
