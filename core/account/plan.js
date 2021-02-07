@@ -151,4 +151,19 @@ $('[class*=accordion-row]').on('click', function() {
             "max-height": panelScrollHeight + "px"
         });
     }
-})  
+})
+
+/*----------- Modal :: Pageload -----------*/
+// Show success/fail modals after being redirected
+function pageloadModal(modalSection) {
+    $(".section-modal").addClass("show visible");
+    $('.body-content').css('overflow', 'hidden');
+    setTimeout(function() {
+        modalSection.addClass("show");
+    }, 50);
+    autocloseModal();
+}
+
+$(window).on("load", function() {
+    pageloadModal($('[id^=mc-pageload-success-renewal]'))
+});
