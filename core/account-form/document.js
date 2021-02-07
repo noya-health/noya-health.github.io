@@ -18,17 +18,17 @@ $("[id^='btn-modal']").on('click', function () {
     $('.body-content').css('overflow', 'hidden');
 
     if (modalContainer.startsWith('mc-load-success')) {
-        closeModalAuto()
+        autocloseModal()
     } else {
     }
 
     $(this).closest('.modal-container').removeClass("show");
 });
 
-var autoCloseFn
+var timeoutModal;
 
-function closeModalAuto() {
-    autoCloseFn = setTimeout(function() {
+function autocloseModal() {
+    timeoutModal = setTimeout(function() {
         closeModal();
     }, 2500);
 }
@@ -38,6 +38,7 @@ function closeModal() {
     var sm = $(".section-modal")
     var mc = $('.modal-container')
     sm.removeClass("show");
+    clearTimeout(timeoutModal);
 
     // Desktop close behaviour
     if ($(window).width() > 991) {
@@ -72,14 +73,12 @@ function closeModal() {
 // When user clicks the button, close the modal
 $(".ui-nav-close-btn-1, .u-close-modal").on('click', function () {
     closeModal();
-    clearTimeout(autoCloseFn);
 });
 
 // When user clicks anywhere outside modal, close it
 $(document).on('click', function (e) {
     if ($(e.target).is('.modal-container')) {
         closeModal();
-        clearTimeout(autoCloseFn);
     }
 });
 
