@@ -127,6 +127,21 @@ function showScrolledTitle(modalSection) {
     }
 }
 
+/*----------- Modal :: Pageload -----------*/
+// Show success/fail modals after being redirected
+function pageloadModal(modalSection) {
+    $(".section-modal").addClass("show visible");
+    $('.body-content').css('overflow', 'hidden');
+    setTimeout(function() {
+        modalSection.addClass("show");
+    }, 50);
+    autocloseModal();
+}
+
+$(window).on("load", function() {
+    pageloadModal($('[id^=mc-pageload-success-renewal]'))
+});
+
 /*----------- Accordion -----------*/
 // Send height to inline for transition for expanded accordions on page load
 $("[class*=accordion-panel-content].expanded").each(function() {
@@ -152,18 +167,3 @@ $('[class*=accordion-row]').on('click', function() {
         });
     }
 })
-
-/*----------- Modal :: Pageload -----------*/
-// Show success/fail modals after being redirected
-function pageloadModal(modalSection) {
-    $(".section-modal").addClass("show visible");
-    $('.body-content').css('overflow', 'hidden');
-    setTimeout(function() {
-        modalSection.addClass("show");
-    }, 50);
-    autocloseModal();
-}
-
-$(window).on("load", function() {
-    pageloadModal($('[id^=mc-pageload-success-renewal]'))
-});
