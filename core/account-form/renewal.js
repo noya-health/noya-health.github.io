@@ -17,10 +17,9 @@ $("[id^='btn-modal']").on('click', function () {
     // Lock body scroll when modal is open
     $('.body-content').css('overflow', 'hidden');
 
-    if (modalContainer.startsWith('mc-load-success')) {
-        setTimeout(function() {
-            closeModal();
-        }, 2500);
+    // Autoclose success/fail feedback modals
+    if (modalContainer.startsWith('mc-load')) {
+        autocloseModal()
     } else {
     }
 
@@ -28,10 +27,19 @@ $("[id^='btn-modal']").on('click', function () {
 });
 
 // Close modal
+var timeoutModal;
+
+function autocloseModal() {
+    timeoutModal = setTimeout(function() {
+        closeModal();
+    }, 2500);
+}
+
 function closeModal() {
     var sm = $(".section-modal")
     var mc = $('.modal-container')
     sm.removeClass("show");
+    clearTimeout(timeoutModal);
 
     // Desktop close behaviour
     if ($(window).width() > 991) {
@@ -60,6 +68,7 @@ function closeModal() {
     setTimeout(function () {
         $('[class*=gridbox-modal-section]').scrollTop(0);
     }, 100);
+
 }
 
 // When user clicks the button, close the modal
