@@ -137,6 +137,11 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'], img[class*='ui-modal-ic
     display: block;
 }
 
+/* Display indicator if plan is active */
+[class*='gridbox-text-container-addon-pricing'].active > .ui-addon-indicator-active {
+    display: block;
+}
+
 /* ----------- Dropdown ----------- */
 :root {
     /* ----------- Colors ----------- */
