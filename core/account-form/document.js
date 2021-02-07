@@ -67,18 +67,19 @@ function closeModal() {
         $('[class*=gridbox-modal-section]').scrollTop(0);
     }, 100);
 
-    clearTimeout(autoCloseFn);
 }
 
 // When user clicks the button, close the modal
 $(".ui-nav-close-btn-1, .u-close-modal").on('click', function () {
     closeModal();
+    clearTimeout(autoCloseFn);
 });
 
 // When user clicks anywhere outside modal, close it
 $(document).on('click', function (e) {
     if ($(e.target).is('.modal-container')) {
         closeModal();
+        clearTimeout(autoCloseFn);
     }
 });
 
