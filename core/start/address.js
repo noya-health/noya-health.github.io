@@ -34,11 +34,21 @@ $('a[href="#"]').click(function(event){
 
 /*----------- Modal -----------*/
 // Open modal
+// Open modal
 $("[id^='btn-modal']").on('click', function () {
     $(".section-modal").addClass("show visible");
+
     // Matches button attr to element with relevant id to open modal
     var modalContainer = $(this).attr('dm-container');
     $('#' + modalContainer).addClass('show');
+
+    // Autoclose immediate success modals
+    if (modalContainer.startsWith('mc-load')) {
+        setTimeout(function() {
+            closeModal();
+        }, 2500);
+    } else {
+    }
 
     // Lock body scroll when modal is open
     $('.body-content').css('overflow', 'hidden');

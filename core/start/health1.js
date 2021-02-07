@@ -10,14 +10,21 @@ $('a[href="#"]').click(function(event){
 // Open modal
 $("[id^='btn-modal']").on('click', function () {
     $(".section-modal").addClass("show visible");
+    // Lock body scroll when modal is open
+    $('.body-content').css('overflow', 'hidden');
+    $(this).closest('.modal-container').removeClass("show");
+
     // Matches button attr to element with relevant id to open modal
     var modalContainer = $(this).attr('dm-container');
     $('#' + modalContainer).addClass('show');
 
-    // Lock body scroll when modal is open
-    $('.body-content').css('overflow', 'hidden');
+    if (modalContainer.startsWith('mc-load-success')) {
+        setTimeout(function() {
+            closeModal();
+        }, 2500);
+    } else {
+    }
 
-    $(this).closest('.modal-container').removeClass("show");
 });
 
 // Close modal

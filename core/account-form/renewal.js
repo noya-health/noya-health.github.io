@@ -17,6 +17,13 @@ $("[id^='btn-modal']").on('click', function () {
     // Lock body scroll when modal is open
     $('.body-content').css('overflow', 'hidden');
 
+    if (modalContainer.startsWith('mc-load-success')) {
+        setTimeout(function() {
+            closeModal();
+        }, 2500);
+    } else {
+    }
+
     $(this).closest('.modal-container').removeClass("show");
 });
 
