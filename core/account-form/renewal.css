@@ -15,10 +15,3 @@ html, body {
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
 }
-
-/* ----------- Slider ----------- */
- #slider-snap.noUi-state-tap .noUi-connect,
- #slider-snap.noUi-state-tap .noUi-origin {
-     -webkit-transition: transform 300ms ease-out;
-     transition: transform 300ms ease-out;
- }

@@ -103,7 +103,7 @@ label {
     color: #afb0b1;
 }
 
-img[class*='ui-row-icon'], img[class*='ui-helper-icon'] {
+img[class*='ui-row-icon'], img[class*='ui-helper-icon'], img[class*='ui-modal-icon'] {
     pointer-events: none;
 }
 
