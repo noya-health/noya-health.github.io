@@ -135,9 +135,7 @@ function pageloadModal(modalSection) {
     setTimeout(function() {
         modalSection.addClass("show");
     }, 50);
-    setTimeout(function() {
-        closeModal();
-    }, 2500);
+    autocloseModal();
 }
 
 $(window).on("load", function() {
