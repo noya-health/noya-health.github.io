@@ -27,6 +27,11 @@ $('.u-gpa-input').attr('onkeyup', 'checkClear()');
 /*----------- Disable right click context menu -----------*/
 $('.tempnocontext').attr('oncontextmenu', 'return false;');
 
+/*----------- Prevent unwanted anchor links behaviour -----------*/
+$('a[href="#"]').click(function(event){
+    event.preventDefault();
+});
+
 /*----------- Modal -----------*/
 // Open modal
 $("[id^='btn-modal']").on('click', function () {
