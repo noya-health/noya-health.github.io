@@ -51,7 +51,7 @@ function closeModal() {
 }
 
 // When user clicks the button, close the modal
-$(".ui-nav-close-btn-1").on('click', function () {
+$(".ui-nav-close-btn-1, .u-close-modal").on('click', function () {
     closeModal();
 });
 
