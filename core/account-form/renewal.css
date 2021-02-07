@@ -1,0 +1,24 @@
+/* ----------- Mobile browsers ----------- */
+/* Prevent address bar resizing */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.body-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+/* ----------- Slider ----------- */
+ #slider-snap.noUi-state-tap .noUi-connect,
+ #slider-snap.noUi-state-tap .noUi-origin {
+     -webkit-transition: transform 300ms ease-out;
+     transition: transform 300ms ease-out;
+ }
