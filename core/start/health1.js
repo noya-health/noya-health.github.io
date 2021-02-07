@@ -10,28 +10,36 @@ $('a[href="#"]').click(function(event){
 // Open modal
 $("[id^='btn-modal']").on('click', function () {
     $(".section-modal").addClass("show visible");
-    // Lock body scroll when modal is open
-    $('.body-content').css('overflow', 'hidden');
-    $(this).closest('.modal-container').removeClass("show");
-
     // Matches button attr to element with relevant id to open modal
     var modalContainer = $(this).attr('dm-container');
     $('#' + modalContainer).addClass('show');
 
-    if (modalContainer.startsWith('mc-load-success')) {
-        setTimeout(function() {
-            closeModal();
-        }, 2500);
+    // Lock body scroll when modal is open
+    $('.body-content').css('overflow', 'hidden');
+
+    // Autoclose success/fail feedback modals
+    if (modalContainer.startsWith('mc-load')) {
+        autocloseModal()
     } else {
     }
 
+    $(this).closest('.modal-container').removeClass("show");
 });
 
 // Close modal
+var timeoutModal;
+
+function autocloseModal() {
+    timeoutModal = setTimeout(function() {
+        closeModal();
+    }, 2500);
+}
+
 function closeModal() {
     var sm = $(".section-modal")
     var mc = $('.modal-container')
     sm.removeClass("show");
+    clearTimeout(timeoutModal);
 
     // Desktop close behaviour
     if ($(window).width() > 991) {
@@ -60,6 +68,7 @@ function closeModal() {
     setTimeout(function () {
         $('[class*=gridbox-modal-section]').scrollTop(0);
     }, 100);
+
 }
 
 // When user clicks the button, close the modal

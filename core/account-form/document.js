@@ -17,7 +17,8 @@ $("[id^='btn-modal']").on('click', function () {
     // Lock body scroll when modal is open
     $('.body-content').css('overflow', 'hidden');
 
-    if (modalContainer.startsWith('mc-load-success')) {
+    // Autoclose success/fail feedback modals
+    if (modalContainer.startsWith('mc-load')) {
         autocloseModal()
     } else {
     }
@@ -25,6 +26,7 @@ $("[id^='btn-modal']").on('click', function () {
     $(this).closest('.modal-container').removeClass("show");
 });
 
+// Close modal
 var timeoutModal;
 
 function autocloseModal() {
@@ -33,7 +35,6 @@ function autocloseModal() {
     }, 2500);
 }
 
-// Close modal
 function closeModal() {
     var sm = $(".section-modal")
     var mc = $('.modal-container')
