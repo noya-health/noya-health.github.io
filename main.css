@@ -58,9 +58,7 @@ p,
 label {
     font-feature-settings: "ss01" on;
 }
-
-     /* ----------- General ----------- */
-     /* Underline animation :: input */
+/* Underline animation :: input */
  .form-input-field-group-1 > .form-input-field-1:focus + .underline, .form-input-field-passcode:focus + .underline{
      width: 100%;
  }
@@ -68,6 +66,7 @@ label {
 .form-input-field-select-group-1 > .nice-select.open + .select-underline-wrapper > .underline-container {
     width: 100%;
 }
+
 .select-underline-wrapper {
     pointer-events: none;
 }
@@ -107,6 +106,11 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'], img[class*='ui-modal-ic
     pointer-events: none;
 }
 
+/* Display indicator if plan is active */
+[class*='gridbox-text-container-plan-status'].active > .ui-plan-indicator-active {
+    display: block;
+}
+
 /* ----------- Radio ----------- */
 .form-input-radio-group-1.checked {
     background-color: rgba(72, 199, 221, 0.25);
@@ -123,12 +127,13 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'], img[class*='ui-modal-ic
     background-color: rgba(72, 199, 221, 0.25);
 }
 
-
+/* Change addon price text colour if checked */
 .gridbox-text-container-addon-pricing-1.active {
     color: #313235;
 }
 
-.gridbox-text-container-addon-pricing-1.active > .ui-addon-indicator-active {
+/* Display indicator if addon is active */
+[class*='gridbox-text-container-plan-status'].active > .ui-plan-indicator-active {
     display: block;
 }
 

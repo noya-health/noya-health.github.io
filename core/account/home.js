@@ -18,6 +18,7 @@ $("[id^='btn-modal']").on('click', function () {
     $('.body-content').css('overflow', 'hidden');
 
     $(this).closest('.modal-container').removeClass("show");
+
 });
 
 // Close modal
@@ -111,16 +112,20 @@ function showScrolledTitle(modalSection) {
     }
 }
 
-/*----------- Modal :: Success -----------*/
+/*----------- Modal :: Pageload -----------*/
 // Show success modal on very 1st visit
-function successModal() {
+function pageloadModal(modalSection) {
     $(".section-modal").addClass("show visible");
     $('.body-content').css('overflow', 'hidden');
     setTimeout(function() {
-        $('#mc-success-1').addClass("show");
+        modalSection.addClass("show");
     }, 50);
     setTimeout(function() {
         closeModal();
     }, 2500);
 }
-$(window).on("load", successModal);
+
+$(window).on("load", function() {
+    pageloadModal($('[id^=mc-pageload-success-plan-1]'))
+});
+
