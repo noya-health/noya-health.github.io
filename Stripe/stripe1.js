@@ -128,6 +128,6 @@ function showScrolledTitle(modalSection) {
 }
 
 $('.form-input-select-1 option').on('click', function() {
-    $(this).closest('.form-input-select-1').blur();
+    $('.form-input-select-1').blur();
 })
 
