@@ -126,8 +126,3 @@ function showScrolledTitle(modalSection) {
         });
     }
 }
-
-$('select').on('change', function() {
-    $('select').blur();
-})
-
