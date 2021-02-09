@@ -9,19 +9,7 @@ var a=this||self;var b=["google","payments","api","ReadyToPayAdditionalBrowsers"
  Copyright The Closure Library Authors.
  SPDX-License-Identifier: Apache-2.0
 */
-var a=this||self;var b=["google","payments","api","PaymentHandlerLaunchPayjs"],c=window||a;b[0]in c||"undefined"==typeof c.execScript||c.execScript("var "+b[0]);for(var d;b.length&&(d=b.shift());)b.length?c=c[d]&&c[d]!==Object.prototype[d]?c[d]:c[d]={}:c[d]=!0;
-/*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
-*/
-var a=this||self;var b=["google","payments","api","PaymentHandlerDynamicUpdatesLaunchPayjs"],c=window||a;b[0]in c||"undefined"==typeof c.execScript||c.execScript("var "+b[0]);for(var d;b.length&&(d=b.shift());)b.length?c=c[d]&&c[d]!==Object.prototype[d]?c[d]:c[d]={}:c[d]=!0;
-/*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
-*/
-var a=this||self;var b=["google","payments","api","EnablePopupForChromeAndroid"],c=window||a;b[0]in c||"undefined"==typeof c.execScript||c.execScript("var "+b[0]);for(var d;b.length&&(d=b.shift());)b.length?c=c[d]&&c[d]!==Object.prototype[d]?c[d]:c[d]={}:c[d]=!0;
+var a=this||self;var b=["google","payments","api","EnableDynamicGpayButton"],c=window||a;b[0]in c||"undefined"==typeof c.execScript||c.execScript("var "+b[0]);for(var d;b.length&&(d=b.shift());)b.length?c=c[d]&&c[d]!==Object.prototype[d]?c[d]:c[d]={}:c[d]=!0;
 /*
 
  Copyright The Closure Library Authors.
