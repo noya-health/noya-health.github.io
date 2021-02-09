@@ -127,7 +127,7 @@ function showScrolledTitle(modalSection) {
     }
 }
 
-$('.form-input-select-1 option').on('click', function() {
+$('.form-input-select-1').on('change', function() {
     $('.form-input-select-1').blur();
 })
 
