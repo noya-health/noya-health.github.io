@@ -54,6 +54,11 @@
             justify-content: center !important;
         }
 
+        /* Underline animation :: select/dropdown */
+        .form-input-field-select-group-1 > .form-input-select-1:focus ~ .select-underline-wrapper > .underline-container {
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -1032,6 +1037,11 @@
                                                             </option>
                                                         </select>
                                                         <div class="nice-select form-input-select-1 form-input-select-wide text2 w-select" tabindex="0" style="width: 0; padding: 0;"></div>
+                                                        <div class="select-underline-wrapper">
+                                                            <div class="underline-container">
+                                                                <div class="underline-select"></div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
