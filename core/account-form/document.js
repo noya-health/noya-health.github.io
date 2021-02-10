@@ -47,12 +47,11 @@ $('#lc-4').on('click', function(){
     console.log ("lc4 clicked")
 })
 
-$('#lottie-container-1).on('click', function(){
+$('#lottie-container-1').on('click', function(){
     setTimeout(function () {
         animSuccessRenewal.goToAndPlay(0);
     }, 200);
     console.log ("lc3 clicked")
-
 })
 
 $('#lottie-container-2').on('click', function(){
