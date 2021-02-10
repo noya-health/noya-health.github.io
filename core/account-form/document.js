@@ -39,7 +39,12 @@ $("[id^='btn-modal']").on('click', function () {
     $(this).closest('.modal-container').removeClass("show");
 });
 
-$('.modal-container').on('click', function(){
+$('#lottie-container-3').on('click', function(){
+    setTimeout(function () {
+        anim1.goToAndPlay(0);
+    }, 200);
+})
+$('#lottie-container-4').on('click', function(){
     setTimeout(function () {
         anim1.goToAndPlay(0);
     }, 200);
@@ -148,7 +153,7 @@ function showScrolledTitle(modalSection) {
 
 /*----------- Modal -----------*/
 var anim1 = bodymovin.loadAnimation({
-    container: document.getElementById('lottie-container-1'),
+    container: document.getElementById('lottie-container-3'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
@@ -157,7 +162,7 @@ var anim1 = bodymovin.loadAnimation({
 
 
 var anim2 = bodymovin.loadAnimation({
-    container: document.getElementById('lottie-container-2'),
+    container: document.getElementById('lottie-container-4'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
