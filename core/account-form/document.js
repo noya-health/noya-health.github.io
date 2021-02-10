@@ -18,10 +18,11 @@ $("[id^='btn-modal']").on('click', function () {
     $('.body-content').css('overflow', 'hidden');
 
     // Autoclose success/fail feedback modals
-    if (modalContainer.startsWith('mc-load')) {
+    /*if (modalContainer.startsWith('mc-load')) {
         autocloseModal()
     } else {
-    }
+    }*/
+
 
     //
     var animId = modalContainer.attr('anim-id');
@@ -37,6 +38,12 @@ $("[id^='btn-modal']").on('click', function () {
     //
     $(this).closest('.modal-container').removeClass("show");
 });
+
+$('.modal-container').on('click', function(){
+    setTimeout(function () {
+        anim1.goToAndPlay(0);
+    }, 200);
+})
 
 // Close modal
 var timeoutModal;
