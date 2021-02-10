@@ -39,12 +39,12 @@ $("[id^='btn-modal']").on('click', function () {
     $(this).closest('.modal-container').removeClass("show");
 });
 
-$('#lottie-container-3').on('click', function(){
+$('#lc-3').on('click', function(){
     setTimeout(function () {
         anim1.goToAndPlay(0);
     }, 200);
 })
-$('#lottie-container-4').on('click', function(){
+$('#lc-4').on('click', function(){
     setTimeout(function () {
         anim1.goToAndPlay(0);
     }, 200);
