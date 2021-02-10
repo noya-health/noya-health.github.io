@@ -23,7 +23,6 @@ $("[id^='btn-modal']").on('click', function () {
     } else {
     }
     // empty
-    var modalAnim = $('#' + modalContainer).attr('anim-id')
     const anim1 = lottie.loadAnimation({
         container: document.getElementById("lottie-container-1"),
         renderer: "svg",
@@ -45,7 +44,7 @@ $("[id^='btn-modal']").on('click', function () {
             anim.goToAndPlay(0);
         }, 500);
     }
-
+    var modalAnim = $('#' + modalContainer).attr('anim-id')
     playAnim(modalAnim)
     // empty
     $(this).closest('.modal-container').removeClass("show");
