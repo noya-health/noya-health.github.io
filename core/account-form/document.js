@@ -11,8 +11,8 @@ $('a[href="#"]').click(function(event){
 $("[id^='btn-modal']").on('click', function () {
     $(".section-modal").addClass("show visible");
     // Matches button attr to element with relevant id to open modal
-    var modalContainer = $(this).attr('dm-container');
-    $('#' + modalContainer).addClass('show');
+    var modalContainer = $('#' + $(this).attr('dm-container'));
+    modalContainer.addClass('show');
 
     // Lock body scroll when modal is open
     $('.body-content').css('overflow', 'hidden');
@@ -24,7 +24,7 @@ $("[id^='btn-modal']").on('click', function () {
     }
 
     //
-    var animId = $(this).attr('anim-id');
+    var animId = modalContainer.attr('anim-id');
     if (animId == 'anim1') {
         setTimeout(function () {
             anim1.goToAndPlay(0);
