@@ -17,22 +17,15 @@ $("[id^='btn-modal']").on('click', function () {
     // Lock body scroll when modal is open
     $('.body-content').css('overflow', 'hidden');
 
-    // Autoclose success/fail feedback modals
-    /*if (modalContainer.startsWith('mc-load')) {
-        autocloseModal()
-    } else {
-    }*/
-
-
     //
     var animId = modalContainer.attr('anim-id');
     if (animId == 'anim1') {
         setTimeout(function () {
-            anim1.goToAndPlay(0);
+            animSuccessRenewal1.goToAndPlay(0);
         }, 200);
     } else if (animId == 'anim2'){
         setTimeout(function () {
-            anim2.goToAndPlay(0);
+            animSuccessRenewal2.goToAndPlay(0);
         }, 200);
     }
     //
@@ -49,7 +42,22 @@ $('#lc-3').on('click', function(){
 
 $('#lc-4').on('click', function(){
     setTimeout(function () {
-        anim1.goToAndPlay(0);
+        anim2.goToAndPlay(0);
+    }, 200);
+    console.log ("lc4 clicked")
+})
+
+$('#lottie-container-1).on('click', function(){
+    setTimeout(function () {
+        animSuccessRenewal.goToAndPlay(0);
+    }, 200);
+    console.log ("lc3 clicked")
+
+})
+
+$('#lottie-container-2').on('click', function(){
+    setTimeout(function () {
+        animSuccessRenewal.goToAndPlay(0);
     }, 200);
     console.log ("lc4 clicked")
 })
@@ -173,3 +181,19 @@ var anim2 = bodymovin.loadAnimation({
     path: "https://assets10.lottiefiles.com/packages/lf20_rd4wrn81.json"
 });
 
+var animSuccessRenewal = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-container-1'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
+});
+
+
+var animSuccessRenewal2 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-container-2'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: "https://assets10.lottiefiles.com/packages/lf20_rd4wrn81.json"
+});
