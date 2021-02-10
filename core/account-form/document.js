@@ -40,19 +40,18 @@ $("[id^='btn-modal']").on('click', function () {
 });
 
 $('#lc-3').on('click', function(){
-    console.log ("lc-3 clicked");
     setTimeout(function () {
         anim1.goToAndPlay(0);
     }, 200);
-
+    console.log ("lc3 clicked")
 
 })
+
 $('#lc-4').on('click', function(){
-    console.log ("lc-4 clicked");
     setTimeout(function () {
         anim1.goToAndPlay(0);
     }, 200);
-
+    console.log ("lc4 clicked")
 })
 
 // Close modal
