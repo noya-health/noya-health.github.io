@@ -51,14 +51,14 @@ $('#lottie-container-1').on('click', function(){
     setTimeout(function () {
         animSuccessRenewal.goToAndPlay(0);
     }, 200);
-    console.log ("lc3 clicked")
+    console.log ("lc1 clicked")
 })
 
 $('#lottie-container-2').on('click', function(){
     setTimeout(function () {
         animSuccessRenewal.goToAndPlay(0);
     }, 200);
-    console.log ("lc4 clicked")
+    console.log ("lc2 clicked")
 })
 
 // Close modal
