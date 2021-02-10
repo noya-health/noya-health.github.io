@@ -21,7 +21,7 @@ $("[id^='btn-modal']").on('click', function () {
     var animId = modalContainer.attr('anim-id');
     if (animId == 'anim1') {
         setTimeout(function () {
-            animSuccessRenewal1.goToAndPlay(0);
+            animSuccessRenewal.goToAndPlay(0);
         }, 200);
     } else if (animId == 'anim2'){
         setTimeout(function () {
