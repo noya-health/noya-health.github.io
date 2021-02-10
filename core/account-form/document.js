@@ -22,31 +22,19 @@ $("[id^='btn-modal']").on('click', function () {
         autocloseModal()
     } else {
     }
-    // empty
-    const anim1 = lottie.loadAnimation({
-        container: document.getElementById("lottie-container-1"),
-        renderer: "svg",
-        loop: false,
-        autoplay: false,
-        path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
-    });
 
-    const anim2 = lottie.loadAnimation({
-        container: document.getElementById("lottie-container-2"),
-        renderer: "svg",
-        loop: false,
-        autoplay: false,
-        path: "https://cdn.statically.io/gist/moofawsaw/d009a2a791b03fbf37bca60de465e29c/raw/a87e77ea3362ba6f42cf65f86f0edbc37cb9f15b/lottie_shuffle.json"
-    });
-
-    function playAnim(anim) {
+    //
+    var animId = $(this).attr('anim-id');
+    if (animId == 'anim1') {
         setTimeout(function () {
-            anim.goToAndPlay(0);
-        }, 500);
+            anim1.goToAndPlay(0);
+        }, 200);
+    } else if (animId == 'anim2'){
+        setTimeout(function () {
+            anim2.goToAndPlay(0);
+        }, 200);
     }
-    var modalAnim = $('#' + modalContainer).attr('anim-id')
-    playAnim(modalAnim)
-    // empty
+    //
     $(this).closest('.modal-container').removeClass("show");
 });
 
@@ -150,3 +138,22 @@ function showScrolledTitle(modalSection) {
         });
     }
 }
+
+/*----------- Modal -----------*/
+var anim1 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-container-1'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
+});
+
+
+var anim2 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-container-2'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: "https://assets10.lottiefiles.com/packages/lf20_rd4wrn81.json"
+});
+
