@@ -22,7 +22,32 @@ $("[id^='btn-modal']").on('click', function () {
         autocloseModal()
     } else {
     }
+    // empty
+    var modalAnim = $('#' + modalContainer).attr('anim-id')
+    const anim1 = lottie.loadAnimation({
+        container: document.getElementById("lottie-container-1"),
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
+    });
 
+    const anim2 = lottie.loadAnimation({
+        container: document.getElementById("lottie-container-2"),
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "https://cdn.statically.io/gist/moofawsaw/d009a2a791b03fbf37bca60de465e29c/raw/a87e77ea3362ba6f42cf65f86f0edbc37cb9f15b/lottie_shuffle.json"
+    });
+
+    function playAnim(anim) {
+        setTimeout(function () {
+            anim.goToAndPlay(0);
+        }, 500);
+    }
+
+    playAnim(modalAnim)
+    // empty
     $(this).closest('.modal-container').removeClass("show");
 });
 
