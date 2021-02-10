@@ -153,7 +153,7 @@ function showScrolledTitle(modalSection) {
 
 /*----------- Modal -----------*/
 var anim1 = bodymovin.loadAnimation({
-    container: document.getElementById('lottie-container-3'),
+    container: document.getElementById('lc-3'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
@@ -162,7 +162,7 @@ var anim1 = bodymovin.loadAnimation({
 
 
 var anim2 = bodymovin.loadAnimation({
-    container: document.getElementById('lottie-container-4'),
+    container: document.getElementById('lc-4'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
