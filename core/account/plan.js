@@ -164,6 +164,18 @@ function pageloadModal(modalSection) {
     setTimeout(function() {
         modalSection.addClass("show");
     }, 50);
+
+    var animId = modalSection.attr('anim-id')
+    if ($(window).width() > 991) {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 250);
+    } else {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 450);
+    }
+    
     autocloseModal();
 }
 
