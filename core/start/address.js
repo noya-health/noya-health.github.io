@@ -50,13 +50,26 @@ $("[id^='btn-modal']").on('click', function () {
     }
 
     $(this).closest('.modal-container').removeClass("show");
+
+    // Plays animation
+    var animId = $('#' + modalContainer).attr('anim-id')
+    if ($(window).width() > 991) {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 200);
+    } else {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 400);
+    }
+
 });
 
 // Close modal
 var timeoutModal;
 
 function autocloseModal() {
-    timeoutModal = setTimeout(function() {
+    timeoutModal = setTimeout(function () {
         closeModal();
     }, 2500);
 }
@@ -66,6 +79,22 @@ function closeModal() {
     var mc = $('.modal-container')
     sm.removeClass("show");
     clearTimeout(timeoutModal);
+
+    // Resets animation
+    if (sm.find('[class^=lottie-container]').length !== 0) {
+        mc.each(function () {
+            var animId = $(this).attr('anim-id');
+            if ($(window).width() > 991) {
+                setTimeout(function () {
+                    animResetFuncs[animId]()
+                }, 200)
+            } else {
+                setTimeout(function () {
+                    animResetFuncs[animId]()
+                }, 400)
+            }
+        });
+    }
 
     // Desktop close behaviour
     if ($(window).width() > 991) {

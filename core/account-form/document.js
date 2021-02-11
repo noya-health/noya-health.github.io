@@ -54,6 +54,7 @@ function closeModal() {
     sm.removeClass("show");
     clearTimeout(timeoutModal);
 
+    // Resets animation
     if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
             var animId = $(this).attr('anim-id');
@@ -157,7 +158,23 @@ function showScrolledTitle(modalSection) {
 
 /*----------- Animations -----------*/
 
+var animFuncs = {
+    'document-emaildoc-1': function () {
+        emailDoc1.goToAndPlay(0)
+    },
+    'document-emaildoc-2': function () {
+        emailDoc2.goToAndPlay(0)
+    },
+};
 
+var animResetFuncs = {
+    'document-emaildoc-1': function () {
+        emailDoc1.goToAndStop(0)
+    },
+    'document-emaildoc-2': function () {
+        emailDoc2.goToAndStop(0)
+    },
+};
 
 const emailDoc1 = bodymovin.loadAnimation({
     container: document.getElementById('lottie-document-emaildoc-1'),
