@@ -18,10 +18,10 @@ $("[id^='btn-modal']").on('click', function () {
     $('.body-content').css('overflow', 'hidden');
 
     // Autoclose success/fail feedback modals
-    if (modalContainer.startsWith('mc-load')) {
+    /*if (modalContainer.startsWith('mc-load')) {
         autocloseModal()
     } else {
-    }
+    }*/
 
     $(this).closest('.modal-container').removeClass("show");
 
@@ -156,6 +156,10 @@ function showScrolledTitle(modalSection) {
         });
     }
 }
+
+$('#gotostop').on('click', function(){
+    emailDoc1.goToAndStop(30, true)
+})
 
 /*----------- Animations -----------*/
 // Animation objects
