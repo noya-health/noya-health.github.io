@@ -196,3 +196,29 @@ $('[class*=accordion-row]').on('click', function() {
         });
     }
 })
+
+/*----------- Animations -----------*/
+// Animation objects
+var animFuncs = {
+    'plan-renewalsuccess-1': function () {
+        renewalSuccess1.goToAndPlay(0)
+    }
+};
+
+var animResetFuncs = {
+    'plan-renewalsuccess-1': function () {
+        renewalSuccess1.goToAndStop(0)
+    }
+};
+
+// Animation paths
+const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
+
+// Animation data
+const renewalSuccess1 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-plan-renewal-success-1'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: successAnim
+});
