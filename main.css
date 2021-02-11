@@ -111,6 +111,10 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'], img[class*='ui-modal-ic
     display: block;
 }
 
+[class*='lottie-container'], [class*='ui-modal-icon-container'] {
+    justify-self: center;
+}
+
 /* ----------- Radio ----------- */
 .form-input-radio-group-1.checked {
     background-color: rgba(72, 199, 221, 0.25);
