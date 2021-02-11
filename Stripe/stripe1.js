@@ -156,3 +156,28 @@ function showScrolledTitle(modalSection) {
         });
     }
 }
+
+/*----------- Modal :: Pageload -----------*/
+// Show unsuccessful modals after being redirected back here
+function pageloadModal(modalSection) {
+    $(".section-modal").addClass("show visible");
+    $('.body-content').css('overflow', 'hidden');
+    setTimeout(function() {
+        modalSection.addClass("show");
+    }, 50);
+
+    var animId = modalSection.attr('anim-id')
+    if ($(window).width() > 991) {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 250);
+    } else {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 450);
+    }
+}
+
+$(window).on("load", function() {
+    pageloadModal($('#mc-pageload-unsuccessful-payment'))
+});
