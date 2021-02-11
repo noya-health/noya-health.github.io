@@ -157,7 +157,7 @@ function showScrolledTitle(modalSection) {
 }
 
 /*----------- Animations -----------*/
-
+// Animation objects
 var animFuncs = {
     'document-emaildoc-1': function () {
         emailDoc1.goToAndPlay(0)
@@ -176,12 +176,16 @@ var animResetFuncs = {
     },
 };
 
+// Animation paths
+const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
+
+// Animation data
 const emailDoc1 = bodymovin.loadAnimation({
     container: document.getElementById('lottie-document-emaildoc-1'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
+    path: successAnim
 });
 
 const emailDoc2 = bodymovin.loadAnimation({
@@ -189,6 +193,6 @@ const emailDoc2 = bodymovin.loadAnimation({
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
+    path: successAnim
 });
 

@@ -465,6 +465,6 @@ span.current {
 
 /* ----------- Animations ----------- */
 
-.lottie-container-success-1 > svg{
-    transform: scale(1.77)
+.lottie-container-success-1 > svg {
+    transform: scale(1.77) !important;
 }
