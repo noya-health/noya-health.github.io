@@ -180,7 +180,7 @@ function pageloadModal(modalSection) {
 }
 
 $(window).on("load", function() {
-    pageloadModal($('[id^=mc-pageload-success-plan-1]'))
+    pageloadModal($('#mc-pageload-success-plan-1'))
 });
 
 /*----------- Animations -----------*/

@@ -175,12 +175,12 @@ function pageloadModal(modalSection) {
             animFuncs[animId]();
         }, 450);
     }
-    
+
     autocloseModal();
 }
 
 $(window).on("load", function() {
-    pageloadModal($('[id^=mc-pageload-success-renewal]'))
+    pageloadModal($('#mc-pageload-success-renewal'))
 });
 
 /*----------- Accordion -----------*/
