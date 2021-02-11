@@ -213,7 +213,7 @@ $('[class*=accordion-row]').on('click', function() {
 // Animation objects
 var animFuncs = {
     'plan-renewalsuccess-1': function () {
-        renewalSuccess1.goToAndPlay(0)
+        renewalSuccess1.goToAndPlay(10, true)
     }
 };
 

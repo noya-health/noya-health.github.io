@@ -187,7 +187,7 @@ $(window).on("load", function() {
 // Animation objects
 var animFuncs = {
     'home-plansuccess-1': function () {
-        planSuccess1.goToAndPlay(0)
+        planSuccess1.goToAndPlay(10, true)
     }
 };
 

@@ -160,7 +160,7 @@ function showScrolledTitle(modalSection) {
 // Animation objects
 var animFuncs = {
     'document-emaildoc-1': function () {
-        emailDoc1.goToAndPlay(0)
+        emailDoc1.goToAndPlay(10, true)
     }
 };
 
