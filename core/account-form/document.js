@@ -11,55 +11,34 @@ $('a[href="#"]').click(function(event){
 $("[id^='btn-modal']").on('click', function () {
     $(".section-modal").addClass("show visible");
     // Matches button attr to element with relevant id to open modal
-    var modalContainer = $('#' + $(this).attr('dm-container'));
-    modalContainer.addClass('show');
+    var modalContainer = $(this).attr('dm-container');
+    $('#' + modalContainer).addClass('show');
 
     // Lock body scroll when modal is open
     $('.body-content').css('overflow', 'hidden');
 
-    //
-    var animId = modalContainer.attr('anim-id');
-    if (animId == 'anim1') {
+    // Autoclose success/fail feedback modals
+    if (modalContainer.startsWith('mc-load')) {
+        autocloseModal()
+    } else {
+    }
+
+    $(this).closest('.modal-container').removeClass("show");
+
+    // Plays animation
+    var animId = $('#' + modalContainer).attr('anim-id')
+    if ($(window).width() > 991) {
         setTimeout(function () {
-            animSuccessRenewal.goToAndPlay(0);
-        }, 200);
-    } else if (animId == 'anim2'){
-        setTimeout(function () {
-            animSuccessRenewal2.goToAndPlay(0);
+            animFuncs[animId]();
         }, 200);
     }
-    //
-    $(this).closest('.modal-container').removeClass("show");
+    else {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 400);
+    }
+    
 });
-
-$('#lc-3').on('click', function(){
-    setTimeout(function () {
-        anim1.goToAndPlay(0);
-    }, 200);
-    console.log ("lc3 clicked")
-
-})
-
-$('#lc-4').on('click', function(){
-    setTimeout(function () {
-        anim2.goToAndPlay(0);
-    }, 200);
-    console.log ("lc4 clicked")
-})
-
-$('#lottie-container-1').on('click', function(){
-    setTimeout(function () {
-        animSuccessRenewal.goToAndPlay(0);
-    }, 200);
-    console.log ("lc1 clicked")
-})
-
-$('#lottie-container-2').on('click', function(){
-    setTimeout(function () {
-        animSuccessRenewal.goToAndPlay(0);
-    }, 200);
-    console.log ("lc2 clicked")
-})
 
 // Close modal
 var timeoutModal;
@@ -162,37 +141,26 @@ function showScrolledTitle(modalSection) {
     }
 }
 
-/*----------- Modal -----------*/
-var anim1 = bodymovin.loadAnimation({
-    container: document.getElementById('lc-3'),
+/*----------- Animations -----------*/
+
+var animFuncs = {
+    'document-emaildoc-1' : function () { emailDoc1.goToAndPlay(0) },
+    'document-emaildoc-2' : function () { emailDoc2.goToAndPlay(0) },
+};
+
+const emailDoc1 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-document-emaildoc-1'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
+    path: "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
 });
 
-
-var anim2 = bodymovin.loadAnimation({
-    container: document.getElementById('lc-4'),
+const emailDoc2 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-document-emaildoc-2'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: "https://assets10.lottiefiles.com/packages/lf20_rd4wrn81.json"
+    path: "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
 });
 
-var animSuccessRenewal = bodymovin.loadAnimation({
-    container: document.getElementById('lottie-container-1'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
-});
-
-
-var animSuccessRenewal2 = bodymovin.loadAnimation({
-    container: document.getElementById('lottie-container-2'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    path: "https://assets10.lottiefiles.com/packages/lf20_rd4wrn81.json"
-});
