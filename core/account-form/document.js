@@ -2,7 +2,7 @@
 $('.tempnocontext').attr('oncontextmenu', 'return false;');
 
 /*----------- Prevent unwanted anchor links behaviour -----------*/
-$('a[href="#"]').click(function(event){
+$('a[href="#"]').click(function (event) {
     event.preventDefault();
 });
 
@@ -31,8 +31,7 @@ $("[id^='btn-modal']").on('click', function () {
         setTimeout(function () {
             animFuncs[animId]();
         }, 200);
-    }
-    else {
+    } else {
         setTimeout(function () {
             animFuncs[animId]();
         }, 400);
@@ -44,7 +43,7 @@ $("[id^='btn-modal']").on('click', function () {
 var timeoutModal;
 
 function autocloseModal() {
-    timeoutModal = setTimeout(function() {
+    timeoutModal = setTimeout(function () {
         closeModal();
     }, 2500);
 }
@@ -55,15 +54,15 @@ function closeModal() {
     sm.removeClass("show");
     clearTimeout(timeoutModal);
 
-    if(sm.find('[class^=lottie-container]').length !== 0) {
-        mc.each(function() {
+    if (sm.find('[class^=lottie-container]').length !== 0) {
+        mc.each(function () {
             var animId = $(this).attr('anim-id');
-            if($(window).width() > 991) {
-                setTimeout(function(){
+            if ($(window).width() > 991) {
+                setTimeout(function () {
                     animResetFuncs[animId]()
                 }, 200)
             } else {
-                setTimeout(function(){
+                setTimeout(function () {
                     animResetFuncs[animId]()
                 }, 400)
             }
@@ -158,15 +157,7 @@ function showScrolledTitle(modalSection) {
 
 /*----------- Animations -----------*/
 
-var animFuncs = {
-    'document-emaildoc-1' : function () { emailDoc1.goToAndPlay(0) },
-    'document-emaildoc-2' : function () { emailDoc2.goToAndPlay(0) },
-};
 
-var animResetFuncs = {
-    'document-emaildoc-1' : function () { emailDoc1.goToAndStop(0) },
-    'document-emaildoc-2' : function () { emailDoc2.goToAndStop(0) },
-};
 
 const emailDoc1 = bodymovin.loadAnimation({
     container: document.getElementById('lottie-document-emaildoc-1'),
