@@ -468,3 +468,7 @@ span.current {
 .lottie-container-success-1 > svg {
     transform: scale(1.77) !important;
 }
+
+.lottie-container-confetti-1 > svg {
+    transform: scale(2) !important;
+}

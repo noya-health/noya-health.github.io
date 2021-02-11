@@ -175,7 +175,7 @@ function pageloadModal(modalSection) {
             animFuncs[animId]();
         }, 450);
     }
-    
+
     autocloseModal();
 }
 
@@ -198,7 +198,7 @@ var animResetFuncs = {
 };
 
 // Animation paths
-const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
+const confettiAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/601c602715a0506acb8791d8_lf30_editor_92nly41e.json"
 
 // Animation data
 const planSuccess1 = bodymovin.loadAnimation({
@@ -206,5 +206,5 @@ const planSuccess1 = bodymovin.loadAnimation({
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: successAnim
+    path: confettiAnim
 });
