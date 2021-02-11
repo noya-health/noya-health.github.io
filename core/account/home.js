@@ -26,6 +26,7 @@ $("[id^='btn-modal']").on('click', function () {
     $(this).closest('.modal-container').removeClass("show");
 
     // Plays animation
+    // Matches modal attr to relevant animation function
     var animId = $('#' + modalContainer).attr('anim-id')
     if ($(window).width() > 991) {
         setTimeout(function () {
@@ -187,7 +188,7 @@ $(window).on("load", function() {
 // Animation objects
 var animFuncs = {
     'home-plansuccess-1': function () {
-        planSuccess1.goToAndPlay(10, true)
+        planSuccess1.goToAndPlay(5, true)
     }
 };
 
