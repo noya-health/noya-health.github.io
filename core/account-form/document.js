@@ -55,6 +55,21 @@ function closeModal() {
     sm.removeClass("show");
     clearTimeout(timeoutModal);
 
+    if(sm.find('[class^=lottie-container]').length !== 0) {
+        mc.each(function() {
+            var animId = $(this).attr('anim-id');
+            if($(window).width() > 991) {
+                setTimeout(function(){
+                    animResetFuncs[animId]()
+                }, 200)
+            } else {
+                setTimeout(function(){
+                    animResetFuncs[animId]()
+                }, 400)
+            }
+        });
+    }
+
     // Desktop close behaviour
     if ($(window).width() > 991) {
         setTimeout(function () {
@@ -146,6 +161,11 @@ function showScrolledTitle(modalSection) {
 var animFuncs = {
     'document-emaildoc-1' : function () { emailDoc1.goToAndPlay(0) },
     'document-emaildoc-2' : function () { emailDoc2.goToAndPlay(0) },
+};
+
+var animResetFuncs = {
+    'document-emaildoc-1' : function () { emailDoc1.goToAndStop(0) },
+    'document-emaildoc-2' : function () { emailDoc2.goToAndStop(0) },
 };
 
 const emailDoc1 = bodymovin.loadAnimation({
