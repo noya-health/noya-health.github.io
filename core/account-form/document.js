@@ -158,7 +158,7 @@ function showScrolledTitle(modalSection) {
 }
 
 $('#gotostop').on('click', function(){
-    emailDoc1.goToAndStop(10, true)
+    animResetFuncs['document-emaildoc-1']()
 })
 
 /*----------- Animations -----------*/
