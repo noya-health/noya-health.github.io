@@ -37,7 +37,7 @@ $("[id^='btn-modal']").on('click', function () {
             animFuncs[animId]();
         }, 400);
     }
-    
+
 });
 
 // Close modal
@@ -153,7 +153,7 @@ const emailDoc1 = bodymovin.loadAnimation({
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
+    path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
 });
 
 const emailDoc2 = bodymovin.loadAnimation({
@@ -161,6 +161,6 @@ const emailDoc2 = bodymovin.loadAnimation({
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
+    path: "https://assets5.lottiefiles.com/packages/lf20_BF6OFq.json"
 });
 
