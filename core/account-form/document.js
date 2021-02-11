@@ -161,19 +161,13 @@ function showScrolledTitle(modalSection) {
 var animFuncs = {
     'document-emaildoc-1': function () {
         emailDoc1.goToAndPlay(0)
-    },
-    'document-emaildoc-2': function () {
-        emailDoc2.goToAndPlay(0)
-    },
+    }
 };
 
 var animResetFuncs = {
     'document-emaildoc-1': function () {
         emailDoc1.goToAndStop(0)
-    },
-    'document-emaildoc-2': function () {
-        emailDoc2.goToAndStop(0)
-    },
+    }
 };
 
 // Animation paths
@@ -182,14 +176,6 @@ const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/60
 // Animation data
 const emailDoc1 = bodymovin.loadAnimation({
     container: document.getElementById('lottie-document-emaildoc-1'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    path: successAnim
-});
-
-const emailDoc2 = bodymovin.loadAnimation({
-    container: document.getElementById('lottie-document-emaildoc-2'),
     renderer: 'svg',
     loop: false,
     autoplay: false,

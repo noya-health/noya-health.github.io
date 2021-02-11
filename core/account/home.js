@@ -164,9 +164,47 @@ function pageloadModal(modalSection) {
     setTimeout(function() {
         modalSection.addClass("show");
     }, 50);
+
+    var animId = modalSection.attr('anim-id')
+    if ($(window).width() > 991) {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 250);
+    } else {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 450);
+    }
+    
     autocloseModal();
 }
 
 $(window).on("load", function() {
     pageloadModal($('[id^=mc-pageload-success-plan-1]'))
+});
+
+/*----------- Animations -----------*/
+// Animation objects
+var animFuncs = {
+    'home-plansuccess-1': function () {
+        planSuccess1.goToAndPlay(0)
+    }
+};
+
+var animResetFuncs = {
+    'home-plansuccess-1': function () {
+        planSuccess1.goToAndStop(0)
+    }
+};
+
+// Animation paths
+const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
+
+// Animation data
+const planSuccess1 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-home-plan-success-1'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: successAnim
 });
