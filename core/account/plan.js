@@ -57,7 +57,7 @@ function closeModal() {
 
 
             var animId = $(this).attr('anim-id');
-            animResetFuncs[animId]();
+    animFuncs[animId]();
 
     // Desktop close behaviour
     if ($(window).width() > 991) {
