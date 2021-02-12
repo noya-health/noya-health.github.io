@@ -220,7 +220,7 @@ var animFuncs = {
 
 var animResetFuncs = {
     'plan-renewalsuccess-1': function () {
-        renewalSuccess1.goToAndStop(15, true)
+        renewalSuccess1.goToAndStop(0)
     }
 };
 
