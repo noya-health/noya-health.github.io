@@ -55,11 +55,9 @@ function closeModal() {
     sm.removeClass("show");
     clearTimeout(timeoutModal);
 
-    // Resets animation
-        mc.each(function () {
+
             var animId = $(this).attr('anim-id');
-            animResetFuncs[animId]()
-        });
+            animResetFuncs[animId]();
 
     // Desktop close behaviour
     if ($(window).width() > 991) {
