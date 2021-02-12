@@ -56,16 +56,16 @@ function closeModal() {
     clearTimeout(timeoutModal);
 
     // Resets animation
-    if ($(".section-modal [class^=lottie-container]").length) {
+    if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
             var animId = $(this).attr('anim-id');
             if ($(window).width() > 991) {
                 setTimeout(function () {
-                    animFuncs[animId]()
+                    animResetFuncs[animId]()
                 }, 200)
             } else {
                 setTimeout(function () {
-                    animFuncs[animId]()
+                    animResetFuncs[animId]()
                 }, 400)
             }
         });
@@ -220,7 +220,7 @@ var animFuncs = {
 
 var animResetFuncs = {
     'plan-renewalsuccess-1': function () {
-        renewalSuccess1.goToAndStop(0)
+        renewalSuccess1.goToAndStop(15, true)
     }
 };
 
