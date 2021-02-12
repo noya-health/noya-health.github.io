@@ -58,12 +58,14 @@ function closeModal() {
     // Resets animation
     if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
-            var animId = $(this).attr('anim-id');
+
             if ($(window).width() > 991) {
+                var animId = $(this).attr('anim-id');
                 setTimeout(function () {
                     animResetFuncs[animId]()
                 }, 200)
             } else {
+                var animId = $(this).attr('anim-id');
                 setTimeout(function () {
                     animResetFuncs[animId]()
                 }, 400)
@@ -220,7 +222,7 @@ var animFuncs = {
 
 var animResetFuncs = {
     'plan-renewalsuccess-1': function () {
-        renewalSuccess1.goToAndStop(30, true)
+        renewalSuccess1.goToAndStop(15, true)
     }
 };
 
