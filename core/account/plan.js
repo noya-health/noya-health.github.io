@@ -61,11 +61,11 @@ function closeModal() {
             var animId = $(this).attr('anim-id');
             if ($(window).width() > 991) {
                 setTimeout(function () {
-                    animResetFuncs[animId]()
+                    animResetFuncs[animId]();
                 }, 200)
             } else {
                 setTimeout(function () {
-                    animResetFuncs[animId]()
+                    animResetFuncs[animId]();
                 }, 400)
             }
         });
