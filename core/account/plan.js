@@ -59,15 +59,7 @@ function closeModal() {
     if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
             var animId = $(this).attr('anim-id');
-            if ($(window).width() > 991) {
-                setTimeout(function () {
-                    animResetFuncs[animId]();
-                }, 200);
-            } else {
-                setTimeout(function () {
-                    animResetFuncs[animId]();
-                }, 400);
-            }
+            animResetFuncs[animId]()
         });
     }
 
@@ -220,7 +212,7 @@ var animFuncs = {
 
 var animResetFuncs = {
     'plan-renewalsuccess-1': function () {
-        renewalSuccess1.goToAndStop(15, true)
+        renewalSuccess1.goToAndStop(0)
     }
 };
 
