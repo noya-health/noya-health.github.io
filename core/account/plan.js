@@ -58,14 +58,14 @@ function closeModal() {
     // Resets animation
     if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
-            var animId = $(this).attr('anim-id');
+            var animeId = $(this).attr('anim-id');
             if ($(window).width() > 991) {
                 setTimeout(function () {
-                    animResetFuncs[animId]();
+                    resetFuncs[animeId]();
                 }, 200);
             } else {
                 setTimeout(function () {
-                    animResetFuncs[animId]();
+                    resetFuncs[animeId]();
                 }, 400);
             }
         });
@@ -218,7 +218,7 @@ var animFuncs = {
     }
 };
 
-var animResetFuncs = {
+var resetFuncs = {
     'plan-renewalsuccess-1': function () {
         renewalSuccess1.goToAndStop(0)
     }
