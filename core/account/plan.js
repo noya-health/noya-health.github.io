@@ -56,7 +56,7 @@ function closeModal() {
     clearTimeout(timeoutModal);
 
     // Resets animation
-    if (sm.find('[class^=lottie-container]').length !== 0) {
+    if (sm.find('[class^=lottie-container]').length) {
         mc.each(function () {
             var animId = $(this).attr('anim-id');
             if ($(window).width() > 991) {
