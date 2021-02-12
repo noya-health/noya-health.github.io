@@ -61,7 +61,7 @@ function closeModal() {
             var animId = $(this).attr('anim-id');
             animResetFuncs[animId]()
         });
-    }
+    } else {}
 
     // Desktop close behaviour
     if ($(window).width() > 991) {
