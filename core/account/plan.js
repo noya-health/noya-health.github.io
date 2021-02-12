@@ -213,13 +213,13 @@ $('[class*=accordion-row]').on('click', function() {
 /*----------- Animations -----------*/
 // Animation objects
 var animFuncs = {
-    'plan-renewalsuccess-1': function () {
+    planrenewalsuccess1: function () {
         renewalSuccess1.goToAndPlay(10, true)
     }
 };
 
 var resetFuncs = {
-    'plan-renewalsuccess-1': function () {
+    planrenewalsuccess1: function () {
         renewalSuccess1.goToAndStop(0)
     }
 };
