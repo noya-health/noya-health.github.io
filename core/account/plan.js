@@ -58,15 +58,15 @@ function closeModal() {
     // Resets animation
     if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
-            var animeId = $(this).attr('anim-id');
+            var animId = $(this).attr('anim-id');
             if ($(window).width() > 991) {
                 setTimeout(function () {
-                    resetFuncs[animeId]();
-                }, 200);
+                    animResetFuncs[animId]()
+                }, 200)
             } else {
                 setTimeout(function () {
-                    resetFuncs[animeId]();
-                }, 400);
+                    animResetFuncs[animId]()
+                }, 400)
             }
         });
     }
@@ -213,14 +213,20 @@ $('[class*=accordion-row]').on('click', function() {
 /*----------- Animations -----------*/
 // Animation objects
 var animFuncs = {
-    planrenewalsuccess1: function () {
+    'plan-renewalsuccess-1': function () {
         renewalSuccess1.goToAndPlay(10, true)
+    },
+    'plan-renewalsuccess-2': function () {
+        renewalSuccess2.goToAndPlay(20, true)
     }
 };
 
-var resetFuncs = {
-    planrenewalsuccess1: function () {
+var animResetFuncs = {
+    'plan-renewalsuccess-1': function () {
         renewalSuccess1.goToAndStop(0)
+    },
+    'plan-renewalsuccess-2': function () {
+        renewalSuccess2.goToAndStop(23, true)
     }
 };
 
@@ -230,6 +236,14 @@ const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/60
 // Animation data
 const renewalSuccess1 = bodymovin.loadAnimation({
     container: document.getElementById('lottie-plan-renewal-success-1'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: successAnim
+});
+
+const renewalSuccess2 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-plan-renewal-success-2'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
