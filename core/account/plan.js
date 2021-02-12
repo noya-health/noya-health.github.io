@@ -56,12 +56,10 @@ function closeModal() {
     clearTimeout(timeoutModal);
 
     // Resets animation
-    if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
             var animId = $(this).attr('anim-id');
             animResetFuncs[animId]()
         });
-    } else {}
 
     // Desktop close behaviour
     if ($(window).width() > 991) {
