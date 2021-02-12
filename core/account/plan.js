@@ -58,17 +58,15 @@ function closeModal() {
     // Resets animation
     if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
-
+            var animId = $(this).attr('anim-id');
             if ($(window).width() > 991) {
-                var animId = $(this).attr('anim-id');
                 setTimeout(function () {
-                    animResetFuncs[animId]()
-                }, 200)
+                    animResetFuncs[animId]();
+                }, 200);
             } else {
-                var animId = $(this).attr('anim-id');
                 setTimeout(function () {
-                    animResetFuncs[animId]()
-                }, 400)
+                    animResetFuncs[animId]();
+                }, 400);
             }
         });
     }
