@@ -215,18 +215,12 @@ $('[class*=accordion-row]').on('click', function() {
 var animFuncs = {
     'plan-renewalsuccess-1': function () {
         renewalSuccess1.goToAndPlay(10, true)
-    },
-    'plan-renewalsuccess-2': function () {
-        renewalSuccess2.goToAndPlay(20, true)
     }
 };
 
 var animResetFuncs = {
     'plan-renewalsuccess-1': function () {
         renewalSuccess1.goToAndStop(0)
-    },
-    'plan-renewalsuccess-2': function () {
-        renewalSuccess2.goToAndStop(23, true)
     }
 };
 
@@ -236,14 +230,6 @@ const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/60
 // Animation data
 const renewalSuccess1 = bodymovin.loadAnimation({
     container: document.getElementById('lottie-plan-renewal-success-1'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    path: successAnim
-});
-
-const renewalSuccess2 = bodymovin.loadAnimation({
-    container: document.getElementById('lottie-plan-renewal-success-2'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
