@@ -62,11 +62,11 @@ function closeModal() {
             if ($(window).width() > 991) {
                 setTimeout(function () {
                     animResetFuncs[animId]();
-                }, 200)
+                }, 200);
             } else {
                 setTimeout(function () {
                     animResetFuncs[animId]();
-                }, 400)
+                }, 400);
             }
         });
     }
