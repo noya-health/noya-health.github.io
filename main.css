@@ -115,6 +115,10 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'], img[class*='ui-modal-ic
     justify-self: center;
 }
 
+.w-form {
+    margin: 0 !important;
+}
+
 /* ----------- Radio ----------- */
 .form-input-radio-group-1.checked {
     background-color: rgba(72, 199, 221, 0.25);
