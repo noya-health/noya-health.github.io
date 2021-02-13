@@ -474,5 +474,6 @@ span.current {
 }
 
 .lottie-container-confetti-1 > svg {
-    transform: scale(1.2) !important;
+    transform: scale(1.5) !important;
+    margin-top: -15% !important;
 }
