@@ -36,9 +36,9 @@ $("[id^='btn-modal']").on('click', function () {
         setTimeout(function () {
             animFuncs[animId]();
         }, 400);
-    }
+    }*/
 
-});*/
+});
 
 // Close modal
 var timeoutModal;
