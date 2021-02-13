@@ -27,7 +27,7 @@ $("[id^='btn-modal']").on('click', function () {
 
     // Plays animation
     // Matches modal attr to relevant animation function
-    var animId = $('#' + modalContainer).attr('anim-id')
+    /*var animId = $('#' + modalContainer).attr('anim-id')
     if ($(window).width() > 991) {
         setTimeout(function () {
             animFuncs[animId]();
@@ -38,7 +38,7 @@ $("[id^='btn-modal']").on('click', function () {
         }, 400);
     }
 
-});
+});*/
 
 // Close modal
 var timeoutModal;
