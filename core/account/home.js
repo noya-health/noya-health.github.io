@@ -27,7 +27,7 @@ $("[id^='btn-modal']").on('click', function () {
 
     // Plays animation
     // Matches modal attr to relevant animation function
-    /*var animId = $('#' + modalContainer).attr('anim-id')
+    var animId = $('#' + modalContainer).attr('anim-id')
     if ($(window).width() > 991) {
         setTimeout(function () {
             animFuncs[animId]();
@@ -36,7 +36,7 @@ $("[id^='btn-modal']").on('click', function () {
         setTimeout(function () {
             animFuncs[animId]();
         }, 400);
-    }*/
+    }
 
 });
 
@@ -188,18 +188,18 @@ $(window).on("load", function() {
 // Animation objects
 var animFuncs = {
     'home-plansuccess-1': function () {
-        planSuccess1.goToAndPlay(5, true)
+        planSuccess1.goToAndPlay(0)
     }
 };
 
 var animResetFuncs = {
     'home-plansuccess-1': function () {
-        planSuccess1.goToAndStop(0)
+        planSuccess1.goToAndStop(75,true)
     }
 };
 
 // Animation paths
-const confettiAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/601c602715a0506acb8791d8_lf30_editor_92nly41e.json"
+const confettiAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6027c0cbadf0e2c9ef42a625_anim-confetti-2.json"
 
 // Animation data
 const planSuccess1 = bodymovin.loadAnimation({
