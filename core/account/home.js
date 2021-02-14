@@ -172,11 +172,11 @@ function pageloadModal(modalSection) {
     if ($(window).width() > 991) {
         setTimeout(function () {
             animFuncs[animId]();
-        }, 250);
+        }, 210);
     } else {
         setTimeout(function () {
             animFuncs[animId]();
-        }, 450);
+        }, 410);
     }
 
     autocloseModal();
