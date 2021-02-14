@@ -26,7 +26,7 @@ function openModal(origin) {
     }
 
     modalContainer.addClass('show')
-    origin.closest('.modal-container').removeClass("show");
+    //origin.closest('.modal-container').removeClass("show");
 
     if (modalContainerId.startsWith('mc-load') || modalContainerId.startsWith('mc-pageload')) {
         autocloseModal()
