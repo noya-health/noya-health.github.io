@@ -8,37 +8,59 @@ $('a[href="#"]').click(function(event){
 
 /*----------- Modal -----------*/
 // Open modal
-$("[id^='btn-modal']").on('click', function () {
+function openModal(origin) {
+    // Blur + opacity
     $(".section-modal").addClass("show visible");
-    // Matches button attr to element with relevant id to open modal
-    var modalContainer = $(this).attr('dm-container');
-    $('#' + modalContainer).addClass('show');
 
-    // Lock body scroll when modal is open
+    // Lock body scroll
     $('.body-content').css('overflow', 'hidden');
 
-    // Autoclose success/fail feedback modals
-    if (modalContainer.startsWith('mc-load')) {
+    var originId = origin.attr('id')
+
+    // Declare first
+    var modalContainerId
+    var modalContainer
+
+    if (originId.startsWith('btn-modal')) {
+        // If modal triggered by btn-modal, find the relevant modal container
+        modalContainerId = origin.attr('dm-container');
+        modalContainer = $('#' + modalContainerId);
+        // If opening modal within a modal -> closest preceding modal
+        origin.closest('.modal-container').removeClass("show");
+    } else if (originId.startsWith('mc-pageload')) {
+        // For modal loading upon page visit
+        modalContainerId = origin.attr('id');
+        modalContainer = $('#' + modalContainerId);
+    }
+
+    modalContainer.addClass('show')
+
+    // Autoclose success/unsuccessful feedback modals
+    if (modalContainerId.startsWith('mc-load') || modalContainerId.startsWith('mc-pageload')) {
         autocloseModal()
     } else {
     }
 
-    $(this).closest('.modal-container').removeClass("show");
-
     // Plays animation
-    // Matches modal attr to relevant animation function
-    var animId = $('#' + modalContainer).attr('anim-id')
-    if ($(window).width() > 991) {
-        setTimeout(function () {
-            animFuncs[animId]();
-        }, 200);
-    } else {
-        setTimeout(function () {
-            animFuncs[animId]();
-        }, 400);
+    if (modalContainer.is('[anim-id]')) {
+        var animId = modalContainer.attr('anim-id')
+        if ($(window).width() > 991) {
+            // Timeout ≈ desktop modal transition time
+            setTimeout(function () {
+                animFuncs[animId]();
+            }, 210);
+        } else {
+            // Timeout ≈ mobile modal transition time
+            setTimeout(function () {
+                animFuncs[animId]();
+            }, 410);
+        }
     }
+}
 
-});
+$("[id^='btn-modal']").on('click', function () {
+    openModal($(this))
+})
 
 // Close modal
 var timeoutModal;
@@ -159,31 +181,10 @@ function showScrolledTitle(modalSection) {
     }
 }
 
-/*----------- Modal :: Pageload -----------*/
-// Show success/fail modals after being redirected
-function pageloadModal(modalSection) {
-    $(".section-modal").addClass("show visible");
-    $('.body-content').css('overflow', 'hidden');
-    setTimeout(function() {
-        modalSection.addClass("show");
-    }, 50);
-
-    var animId = modalSection.attr('anim-id')
-    if ($(window).width() > 991) {
-        setTimeout(function () {
-            animFuncs[animId]();
-        }, 250);
-    } else {
-        setTimeout(function () {
-            animFuncs[animId]();
-        }, 450);
-    }
-
-    autocloseModal();
-}
-
+/*----------- Pageload -----------*/
+// Loads plan purchase success modal
 $(window).on("load", function() {
-    pageloadModal($('#mc-pageload-success-renewal'))
+    openModal($('#mc-pageload-success-renewal'))
 });
 
 /*----------- Accordion -----------*/
