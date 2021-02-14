@@ -33,15 +33,17 @@ function openModal(origin) {
     } else {
     }
 
-    var animId = modalContainer.attr('anim-id')
-    if ($(window).width() > 991) {
-        setTimeout(function () {
-            animFuncs[animId]();
-        }, 210);
-    } else {
-        setTimeout(function () {
-            animFuncs[animId]();
-        }, 410);
+    if (modalContainer.is('[anim-id]')) {
+        var animId = modalContainer.attr('anim-id')
+        if ($(window).width() > 991) {
+            setTimeout(function () {
+                animFuncs[animId]();
+            }, 210);
+        } else {
+            setTimeout(function () {
+                animFuncs[animId]();
+            }, 410);
+        }
     }
 }
 
