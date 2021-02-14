@@ -2,11 +2,12 @@
 $('.tempnocontext').attr('oncontextmenu', 'return false;');
 
 /*----------- Prevent unwanted anchor links behaviour -----------*/
-$('a[href="#"]').click(function(event){
+$('a[href="#"]').click(function (event) {
     event.preventDefault();
 });
 
 /*----------- Modal -----------*/
+
 // Open modal
 function openModal(origin) {
     $(".section-modal").addClass("show visible");
@@ -19,14 +20,13 @@ function openModal(origin) {
     if (originId.startsWith('btn-modal')) {
         modalContainerId = origin.attr('dm-container');
         modalContainer = $('#' + modalContainerId);
-    }
-    else if (originId.startsWith('mc-pageload')) {
+        origin.closest('.modal-container').removeClass("show");
+    } else if (originId.startsWith('mc-pageload')) {
         modalContainerId = origin.attr('id');
         modalContainer = $('#' + modalContainerId);
     }
-
+    
     modalContainer.addClass('show')
-    //origin.closest('.modal-container').removeClass("show");
 
     if (modalContainerId.startsWith('mc-load') || modalContainerId.startsWith('mc-pageload')) {
         autocloseModal()
@@ -47,7 +47,7 @@ function openModal(origin) {
     }
 }
 
-$(window).on("load", function() {
+$(window).on("load", function () {
     openModal($('#mc-pageload-success-plan-1'))
 });
 
@@ -73,17 +73,19 @@ function closeModal() {
     // Resets animation
     if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
-            var animId = $(this).attr('anim-id');
-            if ($(window).width() > 991) {
-                setTimeout(function () {
-                    // Triggers error log in console but works fine
-                    animResetFuncs[animId]()
-                }, 200)
-            } else {
-                setTimeout(function () {
-                    // Triggers error log in console but works fine
-                    animResetFuncs[animId]()
-                }, 400)
+            if ($(this).is('[anim-id]')) {
+                var animId = $(this).attr('anim-id');
+                if ($(window).width() > 991) {
+                    setTimeout(function () {
+                        // Triggers error log in console but works fine
+                        animResetFuncs[animId]()
+                    }, 200)
+                } else {
+                    setTimeout(function () {
+                        // Triggers error log in console but works fine
+                        animResetFuncs[animId]()
+                    }, 400)
+                }
             }
         });
     }
@@ -185,7 +187,7 @@ var animFuncs = {
 
 var animResetFuncs = {
     'home-plansuccess-1': function () {
-        planSuccess1.goToAndStop(75,true)
+        planSuccess1.goToAndStop(75, true)
     }
 };
 
