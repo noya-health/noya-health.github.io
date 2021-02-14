@@ -8,50 +8,37 @@ $('a[href="#"]').click(function(event){
 
 /*----------- Modal -----------*/
 // Open modal
-function openModal(origin) {
+$("[id^='btn-modal']").on('click', function () {
     $(".section-modal").addClass("show visible");
+    // Matches button attr to element with relevant id to open modal
+    var modalContainer = $(this).attr('dm-container');
+    $('#' + modalContainer).addClass('show');
+
+    // Lock body scroll when modal is open
     $('.body-content').css('overflow', 'hidden');
 
-    var originId = origin.attr('id')
-    var modalContainerId
-    var modalContainer
-
-    if (originId.startsWith('btn-modal')) {
-        modalContainerId = origin.attr('dm-container');
-        modalContainer = $('#' + modalContainerId);
-    }
-    else if (originId.startsWith('mc-pageload')) {
-        modalContainerId = origin.attr('id');
-        modalContainer = $('#' + modalContainerId);
-    }
-
-    modalContainer.addClass('show')
-    origin.closest('.modal-container').removeClass("show");
-
-    if (modalContainerId.startsWith('mc-load') || modalContainerId.startsWith('mc-pageload')) {
+    // Autoclose success/fail feedback modals
+    if (modalContainer.startsWith('mc-load')) {
         autocloseModal()
     } else {
     }
 
-    var animId = modalContainer.attr('anim-id')
+    $(this).closest('.modal-container').removeClass("show");
+
+    // Plays animation
+    // Matches modal attr to relevant animation function
+    var animId = $('#' + modalContainer).attr('anim-id')
     if ($(window).width() > 991) {
         setTimeout(function () {
             animFuncs[animId]();
-        }, 210);
+        }, 200);
     } else {
         setTimeout(function () {
             animFuncs[animId]();
-        }, 410);
+        }, 400);
     }
-}
 
-$(window).on("load", function() {
-    openModal($('#mc-pageload-success-plan-1'))
 });
-
-$("[id^='btn-modal']").on('click', function () {
-    openModal($(this))
-})
 
 // Close modal
 var timeoutModal;
@@ -116,7 +103,6 @@ function closeModal() {
 
 }
 
-
 // When user clicks the button, close the modal
 $(".ui-nav-close-btn-1, .u-close-modal").on('click', function () {
     closeModal();
@@ -172,6 +158,33 @@ function showScrolledTitle(modalSection) {
         });
     }
 }
+
+/*----------- Modal :: Pageload -----------*/
+// Show success modal on very 1st visit
+function pageloadModal(modalSection) {
+    $(".section-modal").addClass("show visible");
+    $('.body-content').css('overflow', 'hidden');
+    setTimeout(function() {
+        modalSection.addClass("show");
+    }, 50);
+
+    var animId = modalSection.attr('anim-id')
+    if ($(window).width() > 991) {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 210);
+    } else {
+        setTimeout(function () {
+            animFuncs[animId]();
+        }, 410);
+    }
+
+    autocloseModal();
+}
+
+$(window).on("load", function() {
+    pageloadModal($('#mc-pageload-success-plan-1'))
+});
 
 /*----------- Animations -----------*/
 // Animation objects
