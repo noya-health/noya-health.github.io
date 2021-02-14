@@ -106,17 +106,17 @@ function closeModal() {
     // Resets animation
     if (sm.find('[class^=lottie-container]').length !== 0) {
         mc.each(function () {
-            var animId = $(this).attr('anim-id');
-            if ($(window).width() > 991) {
-                setTimeout(function () {
-                    // Triggers error log in console but works fine
-                    animResetFuncs[animId]()
-                }, 200)
-            } else {
-                setTimeout(function () {
-                    // Triggers error log in console but works fine
-                    animResetFuncs[animId]()
-                }, 400)
+            if ($(this).is('[anim-id]')) {
+                var animId = $(this).attr('anim-id');
+                if ($(window).width() > 991) {
+                    setTimeout(function () {
+                        animResetFuncs[animId]()
+                    }, 200)
+                } else {
+                    setTimeout(function () {
+                        animResetFuncs[animId]()
+                    }, 400)
+                }
             }
         });
     }
