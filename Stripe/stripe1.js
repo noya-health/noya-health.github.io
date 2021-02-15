@@ -35,8 +35,11 @@ function openModal(origin) {
 
     modalContainer.addClass('show')
 
-    // Autoclose success/unsuccessful feedback modals
-    if (modalContainerId.startsWith('mc-load') || modalContainerId.startsWith('mc-pageload')) {
+    // Autoclose success/unsuccessful feedback modals-- modified for payment page
+    if (modalContainerId.startsWith('mc-pageload-unsuccessful-payment')) {
+        // Do nothing
+    }
+    else if (modalContainerId.startsWith('mc-load') || modalContainerId.startsWith('mc-pageload')) {
         autocloseModal()
     } else {
     }
