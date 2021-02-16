@@ -191,7 +191,7 @@ $(window).on("load", function() {
 
 // Loads cancellation success modal
 $(window).on("load", function() {
-    openModal($('#mc-pageload-cancellation-renewal'))
+    openModal($('#mc-pageload-success-cancellation'))
 });
 
 /*----------- Accordion -----------*/
