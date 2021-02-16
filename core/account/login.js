@@ -191,13 +191,13 @@ $(window).on("load", function() {
 // Animation objects
 var animFuncs = {
     'login-logoutsuccess-1': function () {
-        renewalSuccess1.goToAndPlay(10, true)
+        logoutSuccess1.goToAndPlay(10, true)
     }
 };
 
 var animResetFuncs = {
     'login-logoutsuccess-1': function () {
-        renewalSuccess1.goToAndStop(0)
+        logoutSuccess1.goToAndStop(0)
     }
 };
 
@@ -205,7 +205,7 @@ var animResetFuncs = {
 const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/6024bbdd59000b39d82a5f76_anim-success-1.json"
 
 // Animation data
-const renewalSuccess1 = bodymovin.loadAnimation({
+const logoutSuccess1 = bodymovin.loadAnimation({
     container: document.getElementById('lottie-login-logout-success-1'),
     renderer: 'svg',
     loop: false,
