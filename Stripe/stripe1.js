@@ -185,7 +185,7 @@ function showScrolledTitle(modalSection) {
 }
 
 /*----------- Pageload -----------*/
-// Loads plan purchase success modal
+// Loads payment unsuccessful modal
 $(window).on("load", function() {
     openModal($('#mc-pageload-unsuccessful-payment'))
 });

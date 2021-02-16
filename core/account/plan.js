@@ -182,9 +182,16 @@ function showScrolledTitle(modalSection) {
 }
 
 /*----------- Pageload -----------*/
-// Loads plan purchase success modal
+// Loads renewal success modal
+/*
 $(window).on("load", function() {
     openModal($('#mc-pageload-success-renewal'))
+});
+ */
+
+// Loads cancellation success modal
+$(window).on("load", function() {
+    openModal($('#mc-pageload-cancellation-renewal'))
 });
 
 /*----------- Accordion -----------*/
@@ -218,13 +225,20 @@ $('[class*=accordion-row]').on('click', function() {
 var animFuncs = {
     'plan-renewalsuccess-1': function () {
         renewalSuccess1.goToAndPlay(10, true)
+    },
+    'plan-cancellationsuccess-1': function () {
+        cancellationSuccess1.goToAndPlay(10, true)
     }
 };
 
 var animResetFuncs = {
     'plan-renewalsuccess-1': function () {
         renewalSuccess1.goToAndStop(0)
+    },
+    'plan-cancellationsuccess-1': function () {
+        cancellationSuccess1.goToAndStop(0)
     }
+
 };
 
 // Animation paths
@@ -233,6 +247,14 @@ const successAnim = "https://uploads-ssl.webflow.com/5f7197e2c137bd131fd69dc7/60
 // Animation data
 const renewalSuccess1 = bodymovin.loadAnimation({
     container: document.getElementById('lottie-plan-renewal-success-1'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: successAnim
+});
+
+const cancellationSuccess1 = bodymovin.loadAnimation({
+    container: document.getElementById('lottie-plan-cancellation-success-1'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
