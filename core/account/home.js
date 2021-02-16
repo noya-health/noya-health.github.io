@@ -26,14 +26,22 @@ function openModal(origin) {
         modalContainerId = origin.attr('dm-container');
         modalContainer = $('#' + modalContainerId);
         // If opening modal within a modal -> closest preceding modal
-        origin.closest('.modal-container').removeClass("show");
+        if ($(window).width() > 991) {
+            origin.closest('.modal-container').find('.flex-modal-content-parent-1').addClass("u-hide-transition");
+            origin.closest('.modal-container').removeClass("show");
+            modalContainer.addClass('show')
+            origin.closest('.modal-container').find('.flex-modal-content-parent-1').removeClass("u-hide-transition");
+        }
+        else {
+            origin.closest('.modal-container').removeClass("show");
+            modalContainer.addClass('show')
+        }
     } else if (originId.startsWith('mc-pageload')) {
         // For modal loading upon page visit
         modalContainerId = origin.attr('id');
         modalContainer = $('#' + modalContainerId);
+        modalContainer.addClass('show')
     }
-
-    modalContainer.addClass('show')
 
     // Autoclose success/unsuccessful feedback modals
     if (modalContainerId.startsWith('mc-load') || modalContainerId.startsWith('mc-pageload')) {
