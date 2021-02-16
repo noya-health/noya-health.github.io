@@ -119,11 +119,6 @@ img[class*='ui-row-icon'], img[class*='ui-helper-icon'], img[class*='ui-modal-ic
     margin: 0 !important;
 }
 
-.u-hide-transition {
-    transition: none;
-    webkit-transition: none;
-}
-
 /* ----------- Radio ----------- */
 .form-input-radio-group-1.checked {
     background-color: rgba(72, 199, 221, 0.25);
