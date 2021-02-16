@@ -27,10 +27,10 @@ function openModal(origin) {
         modalContainer = $('#' + modalContainerId);
         // If opening modal within a modal -> closest preceding modal
         if ($(window).width() > 991) {
-            origin.closest('.modal-container').find('.flex-modal-content-parent-1').addClass("u-hide-transition");
+            origin.closest('.modal-container').find('[class^=flex-modal-content-parent]').addClass("u-hide-transition");
             origin.closest('.modal-container').removeClass("show");
             modalContainer.addClass('show')
-            origin.closest('.modal-container').find('.flex-modal-content-parent-1').removeClass("u-hide-transition");
+            //origin.closest('.modal-container').find('[class^=flex-modal-content-parent]').removeClass("u-hide-transition");
         }
         else {
             origin.closest('.modal-container').removeClass("show");
