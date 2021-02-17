@@ -190,9 +190,11 @@ $(window).on("load", function() {
  */
 
 // Loads cancellation success modal
+/*
 $(window).on("load", function() {
     openModal($('#mc-pageload-success-cancellation'))
 });
+ */
 
 /*----------- Accordion -----------*/
 // Send height to inline for transition for expanded accordions on page load
