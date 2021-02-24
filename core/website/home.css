@@ -1,0 +1,102 @@
+.navbar-website.show-border::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    border-bottom: 1px solid #f6f6f7;
+}
+
+.navbar-website {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+@media screen and (max-width: 991px) {
+
+    /* Mobile menu btn UI/behaviour */
+    .ui-nav-overflow-website-btn {
+        width: 40px;
+        height: 40px;
+        border: 1px solid transparent;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .ui-nav-overflow-website-btn:focus {
+        outline: none;
+    }
+
+    .ui-nav-overflow-website-btn::after,
+    .ui-nav-overflow-website-btn::before,
+    .nav-overflow-website-btn-child {
+        width: 4px;
+        height: 4px;
+        border-radius: 100px;
+        position: absolute;
+        left: 0px;
+        background: #313235;
+        transform: rotate(0deg);
+        transition: all 0.4s;
+        right: 0%;
+        margin: 0 auto;
+        content: "";
+    }
+
+    .ui-nav-overflow-website-btn::after {
+        top: 20%;
+        margin-top: 0px;
+    }
+
+    .ui-nav-overflow-website-btn::before {
+        bottom: 20%;
+        margin-bottom: 0px;
+    }
+
+    .nav-overflow-website-btn-child {
+        top: 50%;
+        margin-top: -2px;
+        padding: 0;
+    }
+
+    .ui-nav-overflow-website-btn.on::after {
+        transform: rotate(135deg)translate(7.5px, -7px);
+        width: 60%;
+        height: 2px;
+    }
+
+    .ui-nav-overflow-website-btn.on::before {
+        transform: rotate(225deg)translate(7.5px, 7px);
+        width: 60%;
+        height: 2px;
+    }
+
+    .ui-nav-overflow-website-btn.on > .nav-overflow-website-btn-child {
+        opacity: 0;
+    }
+
+    .nav-links-website-header-parent-1 {
+        visibility: hidden;
+    }
+
+    .nav-links-website-header-parent-1.visible {
+        visibility: visible;
+        z-index: 10;
+    }
+
+    .nav-links-website-header-parent-1.show {
+        opacity: 1;
+    }
+
+    .wordmark-header-core.front,
+    .ui-nav-overflow-website-btn.front {
+        z-index: 100;
+    }
+
+    .navbar-website {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+}
