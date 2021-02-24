@@ -1,25 +1,26 @@
 /*----------- Mobile menu -----------*/
+var mobileOverflowBtn = $(".ui-nav-overflow-website-btn")
 var mobileOverflow = $(".nav-links-website-header-parent-1")
 var headerLogo = $('.wordmark-header-core')
 var timeoutMenu
 
-function closeMobileMenu() {
+function closeMobileOverflow() {
     // Prevents visual breaking on continuous event triggers within short amount of time
     clearTimeout(timeoutMenu)
     timeoutMenu = setTimeout(function () {
         mobileOverflow.removeClass('visible');
         // Prevents flicker when z-index is restored
-        $(this).add(headerLogo).removeClass('front');
+        mobileOverflowBtn.add(headerLogo).removeClass('front');
     }, 200);
 }
 
-$(".ui-nav-overflow-website-btn").on('click', function () {
+mobileOverflowBtn.on('click', function () {
     if ($(this).hasClass('on')) {
         mobileOverflow.removeClass('show');
         // Unlocks body when menu is closed
         $("body").css('overflow', 'auto');
         $(this).removeClass('on');
-        closeMobileMenu();
+        closeMobileOverflow();
     } else {
         mobileOverflow.addClass('visible');
         mobileOverflow.addClass('show');
