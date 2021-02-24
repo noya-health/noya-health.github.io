@@ -4,6 +4,8 @@ var headerLogo = $('.wordmark-header-core')
 var timeoutMenu
 
 function closeMobileMenu() {
+    // Prevents visual breaking on continuous event triggers within short amount of time
+    clearTimeout(timeoutMenu)
     timeoutMenu = setTimeout(function () {
         mobileOverflow.removeClass('visible');
         // Prevents flicker when z-index is restored
@@ -18,8 +20,6 @@ $(".ui-nav-overflow-website-btn").on('click', function () {
         $("body").css('overflow', 'auto');
         $(this).removeClass('on');
         closeMobileMenu();
-        // Prevents visual breaking on continuous event triggers within short amount of time
-        clearTimeout(timeoutMenu)
     } else {
         mobileOverflow.addClass('visible');
         mobileOverflow.addClass('show');
