@@ -7,7 +7,9 @@ var timeoutMenu
 function closeMobileOverflow() {
     // Prevents visual breaking on continuous event triggers within short amount of time
     clearTimeout(timeoutMenu)
+    // Timeout ≈ mobile menu transition time
     timeoutMenu = setTimeout(function () {
+        // Prevents mobile menu from disappearing before it fully fades out
         mobileOverflow.removeClass('visible');
         // Prevents flicker when z-index is restored
         mobileOverflowBtn.add(headerLogo).removeClass('front');
@@ -17,7 +19,6 @@ function closeMobileOverflow() {
 mobileOverflowBtn.on('click', function () {
     if ($(this).hasClass('on')) {
         mobileOverflow.removeClass('show');
-        // Unlocks body when menu is closed
         $("body").css('overflow', 'auto');
         $(this).removeClass('on');
         closeMobileOverflow();
@@ -27,7 +28,6 @@ mobileOverflowBtn.on('click', function () {
         // Btn animation and moving btn + logo z-index
         $(this).addClass('on front');
         headerLogo.addClass('front')
-        // Locks body when menu is open
         $("body").css('overflow', 'hidden');
     }
 })

@@ -19,7 +19,7 @@
     .ui-nav-overflow-website-btn {
         width: 40px;
         height: 40px;
-        border: 1px solid transparent;
+        border: 1px solid black;
         background: transparent;
         position: relative;
         cursor: pointer;
@@ -34,7 +34,7 @@
     .nav-overflow-website-btn-child {
         width: 4px;
         height: 4px;
-        border-radius: 100px;
+        border-radius: 50%;
         position: absolute;
         left: 0px;
         background: #313235;
@@ -46,13 +46,15 @@
     }
 
     .ui-nav-overflow-website-btn::after {
-        top: 20%;
+        top: 11px;
         margin-top: 0px;
+
     }
 
     .ui-nav-overflow-website-btn::before {
-        bottom: 20%;
+        bottom: 11px;
         margin-bottom: 0px;
+
     }
 
     .nav-overflow-website-btn-child {
@@ -62,15 +64,18 @@
     }
 
     .ui-nav-overflow-website-btn.on::after {
-        transform: rotate(135deg)translate(7.5px, -7px);
-        width: 60%;
+        transform: rotate(135deg)translate(4px, -4.5px);
+        width: 14px;
         height: 2px;
+        border-radius: 0;
+
     }
 
     .ui-nav-overflow-website-btn.on::before {
-        transform: rotate(225deg)translate(7.5px, 7px);
-        width: 60%;
+        transform: rotate(225deg)translate(5px, 6px);
+        width: 14px;
         height: 2px;
+        border-radius: 0;
     }
 
     .ui-nav-overflow-website-btn.on > .nav-overflow-website-btn-child {
