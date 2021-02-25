@@ -19,7 +19,7 @@
     .ui-nav-overflow-website-btn {
         width: 40px;
         height: 40px;
-        border: 1px solid black;
+        border: 1px solid transparent;
         background: transparent;
         position: relative;
         cursor: pointer;
