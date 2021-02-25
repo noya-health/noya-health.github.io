@@ -81,12 +81,13 @@
     .ui-nav-overflow-website-btn.on > .nav-overflow-website-btn-child {
         opacity: 0;
     }
+
     /* Fix click/hover on mobile */
-    .btn-ghost-2:hover {
+    .btn-ghost:hover {
         background-color: #f1f3f5 !important;
     }
 
-    .btn-ghost-2:active {
+    .btn-ghost:active {
         background-color: #e2e6ea !important;
     }
 
