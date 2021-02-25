@@ -84,7 +84,7 @@
 
     /* Fix click/hover on mobile */
     .btn-ghost:hover {
-        background-color: #f1f3f5 !important;
+        background-color: transparent !important;
     }
 
     .btn-ghost:active {
