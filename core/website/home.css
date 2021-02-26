@@ -17,8 +17,8 @@
 
     /* Mobile menu btn UI/behaviour */
     .ui-nav-overflow-website-btn {
-        width: 40px;
-        height: 40px;
+        width: 39px;
+        height: 39px;
         border: 1px solid transparent;
         background: transparent;
         position: relative;
@@ -32,8 +32,8 @@
     .ui-nav-overflow-website-btn::after,
     .ui-nav-overflow-website-btn::before,
     .nav-overflow-website-btn-child {
-        width: 4px;
-        height: 4px;
+        width: 3px;
+        height: 3px;
         border-radius: 50%;
         position: absolute;
         left: 0px;
@@ -64,7 +64,7 @@
     }
 
     .ui-nav-overflow-website-btn.on::after {
-        transform: rotate(135deg)translate(4px, -4.5px);
+        transform: rotate(135deg)translate(5px, -4.2px);
         width: 14px;
         height: 2px;
         border-radius: 0;
@@ -72,7 +72,7 @@
     }
 
     .ui-nav-overflow-website-btn.on::before {
-        transform: rotate(225deg)translate(5px, 6px);
+        transform: rotate(225deg)translate(5px, 4.2px);
         width: 14px;
         height: 2px;
         border-radius: 0;
