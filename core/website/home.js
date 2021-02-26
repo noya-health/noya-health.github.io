@@ -17,16 +17,17 @@ function closeMobileOverflow() {
 mobileOverflowBtn.on('click', function () {
     // Prevents visual <> function breaking on continuous burst of btn clicks
     clearTimeout(timeoutMenu);
-    $(this).toggleClass('on');
-    mobileOverflow.toggleClass('show');
-
     if ($(this).hasClass('on')) {
+        mobileOverflow.removeClass('show');
         $("body").css('overflow', 'auto');
+        $(this).removeClass('on');
         closeMobileOverflow();
     } else {
         mobileOverflow.addClass('visible');
+        mobileOverflow.addClass('show');
         // Btn animation and moving btn + logo z-index
-        $(this).add(headerLogo).addClass('front');
+        $(this).addClass('on front');
+        headerLogo.addClass('front')
         $("body").css('overflow', 'hidden');
     }
 })
