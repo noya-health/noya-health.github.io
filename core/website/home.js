@@ -23,6 +23,7 @@ mobileOverflowBtn.on('click', function () {
         $(this).removeClass('on');
         closeMobileOverflow();
     } else {
+        clearTimeout(timeoutMenu);
         mobileOverflow.addClass('visible');
         mobileOverflow.addClass('show');
         // Btn animation and moving btn + logo z-index
