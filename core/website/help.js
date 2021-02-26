@@ -5,8 +5,6 @@ var headerLogo = $('.wordmark-header-core')
 var timeoutMenu
 
 function closeMobileOverflow() {
-    // Prevents visual breaking on continuous event triggers within short amount of time
-    clearTimeout(timeoutMenu)
     // Timeout ≈ mobile menu transition time
     timeoutMenu = setTimeout(function () {
         // Prevents mobile menu from disappearing before it fully fades out
@@ -17,6 +15,8 @@ function closeMobileOverflow() {
 }
 
 mobileOverflowBtn.on('click', function () {
+    // Prevents visual <> function breaking on continuous burst of btn clicks
+    clearTimeout(timeoutMenu);
     if ($(this).hasClass('on')) {
         mobileOverflow.removeClass('show');
         $("body").css('overflow', 'auto');
