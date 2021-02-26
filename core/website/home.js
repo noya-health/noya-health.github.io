@@ -6,7 +6,7 @@ var timeoutMenu
 
 function closeMobileOverflow() {
     // Prevents visual breaking on continuous event triggers within short amount of time
-    clearTimeout(timeoutMenu)
+   
     // Timeout ≈ mobile menu transition time
     timeoutMenu = setTimeout(function () {
         // Prevents mobile menu from disappearing before it fully fades out
@@ -17,13 +17,13 @@ function closeMobileOverflow() {
 }
 
 mobileOverflowBtn.on('click', function () {
+    clearTimeout(timeoutMenu);
     if ($(this).hasClass('on')) {
         mobileOverflow.removeClass('show');
         $("body").css('overflow', 'auto');
         $(this).removeClass('on');
         closeMobileOverflow();
     } else {
-        clearTimeout(timeoutMenu);
         mobileOverflow.addClass('visible');
         mobileOverflow.addClass('show');
         // Btn animation and moving btn + logo z-index
